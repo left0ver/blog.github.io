@@ -92,7 +92,7 @@ exclude:
 ignore:
 
 
-theme: landscape
+theme: yilia-plus
 # deploy:
 #   type: git
 #   repository: root@112.74.50.60:/home/git/blog.git   #用户名@服务器Ip:git仓库位置
@@ -102,6 +102,4 @@ deploy:
   repo: git@github.com:left0ver/blog.github.io.git
   branch: docs
   message: updated:{{ now("yyyy-MM-DD HH:mm:ss") }}
- 
-
  
