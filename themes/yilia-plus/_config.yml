@@ -136,7 +136,9 @@ gitalk:
   repo: 'blog.github.io'
   owner: 'left0ver'
   admin: ['left0ver']
-  distraction_free_mode: true
+  distraction_free_mode: false
+  labels: ['Comment']
+
 # 访问量统计功能(不蒜子)
 busuanzi:
   enable: true
