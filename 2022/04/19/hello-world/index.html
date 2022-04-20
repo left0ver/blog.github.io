@@ -449,6 +449,7 @@
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
+  console.log('Comment');
 var gitalk = new Gitalk({
   clientID: '4fae767a71e73af8bc69',
   clientSecret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475',
@@ -456,8 +457,8 @@ var gitalk = new Gitalk({
   owner: 'left0ver',
   admin: 'left0ver',
   distractionFreeMode: 'true',
-  // labels: 'Comment,Gitalk',
-  labels: 'Comment,Gitalk'.split(',').filter(l => l) ,
+  // labels: 'Comment',
+  labels: 'Comment'.split(',').filter(l => l) ,
 })
 gitalk.render('gitalk-container')
 
