@@ -1,6 +1,6 @@
 # Site
 title: leftover博客
-subtitle: '张文超博客'
+# subtitle: '张文超博客'
 description: 'leftover的个人博客'
 keywords: leftover-blog,leftover博客,张文超博客,leftover,博客,
 author: leftover
@@ -102,4 +102,7 @@ deploy:
   repo: git@github.com:left0ver/blog.github.io.git
   branch: docs
   message: updated:{{ now("yyyy-MM-DD HH:mm:ss") }}
+
+aplayer:
+    meting: true
  
