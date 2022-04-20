@@ -456,7 +456,8 @@ var gitalk = new Gitalk({
   owner: 'left0ver',
   admin: 'left0ver',
   distractionFreeMode: 'true',
-  labels: 'Comment',
+  // labels: 'Comment,Gitalk',
+  labels: 'Comment,Gitalk'.split(',').filter(l => l) ,
 })
 gitalk.render('gitalk-container')
 
