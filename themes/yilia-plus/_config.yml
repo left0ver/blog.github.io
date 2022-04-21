@@ -2,13 +2,12 @@
 menu:
   主页: /
   技术笔记: https://zhousiwei.gitee.io/ibooks/
-  随笔: /tags/随笔/
+  标签: /tags/
+  分类: /categories/
 
 # subNav-子导航
 subNav:
   - github: "https://github.com/left0ver" # (支持设置多个)
-  # - jianshu: "#" #简书
-  # - cnblog: "#"
   - blog: "https://leftover.cn"
   - csdn: "https://blog.csdn.net/m0_52537576?type=blog"
   # - rss: "#"
@@ -16,12 +15,6 @@ subNav:
   - qq: "img/qq.jpg"
   # - weixin: "img/weixin_.png"
   - bilibili: "https://space.bilibili.com/646733181"
-  # - acfun: "#"
-  # - mail: ""
-  # - facebook: "#"
-  # - google: "#"
-  # - twitter: "#"
-  # - linkedin: "#"
 
 # 悬停预览图片效果
 hover_effect:
@@ -52,8 +45,8 @@ mathjax: false
 
 # Open link in a new tab | 是否在新窗口打开链接
 open_in_new:
-  article: true  # 文章链接
-  menu: true   # 导航菜单
+  article: false  # 文章链接
+  menu: false   # 导航菜单
   subNav: true  # 子菜单
 
 # 打赏
@@ -69,9 +62,9 @@ weixin: /img/weixin.png
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
-toc: 1
+toc: 2
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
-toc_hide_index: true
+toc_hide_index: false
 # 目录为空时的提示
 toc_empty_wording: '目录溜走了~~'
 
@@ -87,7 +80,7 @@ google_analytics: ''
 favicon: /favicon.ico
 
 # 你的头像url
-avatar: /img/head.jpg
+avatar: /img/avatar.jpg
 
 # 是否开启分享
 share_jia: true
@@ -129,7 +122,8 @@ giteement:
   gitment_oauth:
     client_id: '2e7d725589819fd398f51636993b7487f270338a175596e472d0742d42fec58d'           #client ID
     client_secret: '62c0da5f103d793b38db2e6bfd3fe64b026fa7c3b229a66410fb8985d95a7cde'   #client secret
-# 自己集成的gitalk系统
+
+#5、自己集成gitalk评论系统
 gitalk:
   client_id: '4fae767a71e73af8bc69'
   client_secret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475'
@@ -137,6 +131,7 @@ gitalk:
   owner: 'left0ver'
   admin: ['left0ver']
   distraction_free_mode: true
+  labels: ['Comment']
 # 访问量统计功能(不蒜子)
 busuanzi:
   enable: true
@@ -145,40 +140,60 @@ busuanzi:
 
 # 网易云音乐插件
 music:
-  enable: true
+  cloudMusic:
+    enable: false
   # 播放器尺寸类型(1：长尺寸、2：短尺寸)
-  type: 2
+    type: 2
   #id: 1334445174  # 网易云分享的音乐ID(更换音乐请更改此配置项)
-  autoPlay: true  # 是否开启自动播放
+    autoPlay: true  # 是否开启自动播放
   # 提示文本(关闭请设置为false)
-  text: '这似乎是首纯音乐，请尽情的欣赏它吧！'
+    text: '学习之余来听首歌叭'
+# 添加aplayer 音乐插件
+ # aplayer 音乐插件，https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+  # {% meting "60198" "netease" "playlist" "autoplay" "mutex:false" "listmaxheight:340px" "preload:none" "theme:#ad7a86" ... %}
+  aplayer:                # aplayer 音乐插件
+    enable: true          # 使用aplayer
+    id: '8444951237'                # 必须值 歌曲 id / 播放列表 id / 相册 id / 搜索关键字
+    server: 'tencent'	          # 必须值 音乐平台: netease, tencent, kugou, xiami, baidu
+    type: 'playlist'	            # 必须值 song, playlist, album, search, artist
+    fixed: true	          # false 开启固定模式 true 开启吸底模式
+    loop: none	          # 列表循环模式：all, one,none
+    order: random	        # 列表播放模式： list, random
+    volume: 0.4	          # 播放器音量
+    listfolded: true	    # 指定音乐播放列表是否折叠
+    autoplay: false	      # 自动播放，移动端浏览器暂时不支持此功能
+    mutex: true	          # 该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
+    listmaxheight: 400px	# 播放列表的最大长度
+    preload: none	        # 音乐文件预载入模式，可选项： none, metadata, auto
+    theme: '#C7A3AD'	      # 播放器风格色彩设置
+
 
 # 页面点击小红心
 clickLove:
   # (关闭请设置为false)
   enable: true
 
-# GitHub Ribbons(https://github.blog/2008-12-19-github-ribbons/)
 github:
   # (关闭请设置为false)
-  url: https://github.com/JoeyBling/hexo-theme-yilia-plus
+  url: false
 
 # 页脚 Litten(此配置项已弃用)
 # 帮助我们让更多人可以更方便使用Hexo，请尽量不要修改此主题配置
 pageFooter:
+  enable: false
   litten: GitHub:<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank">hexo-theme-yilia-plus</a>
 
 # 开启百度站长平台自动推送(https://ziyuan.baidu.com/linksubmit/index)
-baidu_push: false
+baidu_push: true
 
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
 copyright_type: 2
 # 版权声明自定义文本(关闭请设置为false)
-copyright_text:
+copyright_text: '本文版权归leftover所有,如需转载清标明来源！'
 
 # 网站成立年份(默认为 2018，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
-since: 2018
+since: 2022
 
 # Progress Bar | 页面加载进度条
 # Demo: http://github.hubspot.com/pace/docs/welcome/
@@ -192,8 +207,8 @@ progressBar:
   color: blue
 
 # Apple Touch icon 苹果图标(关闭请设置为false)
-apple_touch_icon: '/apple-touch-icon-180x180.png'
-
+# apple_touch_icon: '/apple-touch-icon-180x180.png'
+apple_touch_icon: '/img/qq.jpg'
 # Tab Title Change | 标签页标题切换
 tab_title_change:
   enable: true
@@ -232,7 +247,7 @@ live2d:
     position: right # 显示位置：left/right(default: 'right')
     width: 145  # 模型的长度(default: 150)
     height: 315 # 模型的高度(default: 300)
-    hOffset: 50 # 水平偏移(default: 0)
+    hOffset: 70 # 水平偏移(default: 0)
     #vOffset: -20 # 垂直偏移(default: -20)
   mobile:
     show: true # 是否在移动设备上显示(default: true)
@@ -256,7 +271,7 @@ style:
 # slider的设置
 slider:
   # 是否默认展开tags板块
-  showTags: true
+  showTags: false
 
 # 智能菜单
 # 如不需要，将该对应项置为false
@@ -264,7 +279,7 @@ slider:
 #smart_menu:
 #  friends: false
 smart_menu:
-  innerArchive: '所有文章'
+  innerArchive: '查找内容'
   friends: false
   aboutme: '关于我'
 
@@ -287,4 +302,5 @@ friends:
     url: https://blog.csdn.net/qq_30930805
 
 # 关于我
-aboutme: 主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme:
+

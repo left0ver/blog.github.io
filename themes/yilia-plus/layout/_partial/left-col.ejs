@@ -1,7 +1,8 @@
 <% var defaultBg = '#4d4d4d'; %>
 <% var defaultBgImg = '/img/biubiubiu.gif'; %>
 <% var overlayBgImg= theme.style.gif && theme.style.gif.enable && theme.style.gif.path ? theme.style.gif.path : defaultBgImg; %>
-<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>;<% if (theme.style.gif && theme.style.gif.enable){ %>background: url('<%- url_for(overlayBgImg) %>') no-repeat ;<%}%>"></div>
+<!-- <div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>;<% if (theme.style.gif && theme.style.gif.enable){ %>background: url('<%- url_for(overlayBgImg) %>') no-repeat ;<%}%>"></div> -->
+<div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="<%- url_for('/') %>" class="profilepic">
@@ -15,11 +16,22 @@
 		<%}%>
 
 		<nav class="header-menu">
-			<ul>
+			<!-- <ul>
 			<% for (var i in theme.menu){ %>
 				<li><a href="<%- url_for(theme.menu[i]) %>" <% if (theme.open_in_new.menu){ %>target="_blank"<% } %>><%= i %></a></li>
 			<%}%>
-			</ul>
+			</ul> -->
+      <div class="tagcloud" id="tags-title">
+          <div><a href="javascript:void(0)">标签云</a>⬇️</div>
+      </div>
+
+      <div class="tags tagcloud">
+        <% for (var i in theme.tags){ %>
+          <div>
+            <a class="color<%=1+Math.floor(Math.random()*11)%>" href="<%- url_for(theme.tags[i]) %>"> <%= i %></a>
+          </div>
+          <%}%>
+      </div>
 		</nav>
 		<nav class="header-smart-menu">
 			<% for (var i in theme.smart_menu){ %>
@@ -32,12 +44,12 @@
 			<div class="social">
 				<% for (var i in theme.subNav){ %>
 					<% for (var nav in theme.subNav[i]){ %>
-						<a class="<%= nav %>" href="<%- url_for(theme.subNav[i][nav]) %>" 
+						<a class="<%= nav %>" href="<%- url_for(theme.subNav[i][nav]) %>"
 												title="<% if (__('subNav.title.'+ nav)){ %><%= __('subNav.title.'+ nav) %><% } else { %><%= nav %><% } %>" <% if (theme.open_in_new.subNav){ %>target="_blank"<% } %>><i class="icon-<%= nav %>"></i></a>
 					<%}%>
 				<%}%>
 			</div>
-		<% if (theme.music && theme.music.enable){ %>
+		<% if (theme.music && theme.music.cloudMusic.enable){ %>
 			<%# "网易云音乐插件" %>
 			<%# "bottom:120px; left:auto;position:absolute;  width:85%" %>
 			<% var defaultHeight = theme.music.type == 1 ? '32' : '66'; %>
@@ -50,6 +62,22 @@
 				<p style="font-size: 12px;"><%-musicText%><p>
 			<% } %>
 		<% } %>
+          <!-- 添加aplayer音乐插件-->
+    <% if (theme.music.aplayer.enable){ %>
+      <%# "aplayer音乐插件" %>
+      <div id="aplayer-hjnObCgk" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="<%=theme.music.aplayer.id%>"
+        data-server="<%=theme.music.aplayer.server%>" data-type="<%=theme.music.aplayer.type%>" data-loop="<%=theme.music.aplayer.loop%>"
+        data-order="<%=theme.music.aplayer.order%>" data-lrctype="0" data-listfolded="<%=theme.music.aplayer.listfolded%>"
+        data-fixed="<%=theme.music.aplayer.fixed%>" data-autoplay="<%=theme.music.aplayer.autoplay%>"
+        data-volume="<%=theme.music.aplayer.volume%>" data-mutex="<%=theme.music.aplayer.mutex%>"
+        data-listmaxheight="<%=theme.music.aplayer.listmaxheight%>" data-preload="<%=theme.music.aplayer.preload%>"
+        data-theme="<%=theme.music.aplayer.theme%>">
+      </div>
+        <% } %>
 		</nav>
-	</header>		
+	</header>
 </div>
+
+ <script>
+  console.log('<%=theme.tags%>');
+</script>
