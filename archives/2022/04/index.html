@@ -18,7 +18,7 @@
 <meta property="og:description" content="leftover的个人博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客,">
+<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="leftover博客" type="application/atom+xml">
@@ -85,7 +85,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/%E5%A4%B4%E5%83%8F4.jpg" class="js-avatar">
+			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 			<h1 class="header-author"><a href="/">leftover</a></h1>
@@ -93,20 +93,53 @@
 		
 
 		<nav class="header-menu">
-			<ul>
+			<!-- <ul>
 			
 				<li><a href="/" >主页</a></li>
 			
 				<li><a target="_blank" rel="noopener" href="https://zhousiwei.gitee.io/ibooks/" >技术笔记</a></li>
 			
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" >随笔</a></li>
+				<li><a href="/tags/" >标签</a></li>
 			
-			</ul>
+				<li><a href="/categories/" >分类</a></li>
+			
+			</ul> -->
+      <div class="tagcloud" id="tags-title">
+          <div><a href="javascript:void(0)">标签云</a>⬇️</div>
+      </div>
+
+      <div class="tags tagcloud">
+        
+          <div>
+            <a class="color1" href="/tags/vue"> vue</a>
+          </div>
+          
+          <div>
+            <a class="color11" href="/tags/javaScript"> javaScript</a>
+          </div>
+          
+          <div>
+            <a class="color11" href="/tags/html"> html</a>
+          </div>
+          
+          <div>
+            <a class="color9" href="/tags/css"> css</a>
+          </div>
+          
+          <div>
+            <a class="color9" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+          </div>
+          
+          <div>
+            <a class="color10" href="/tags/daily"> daily</a>
+          </div>
+          
+      </div>
 		</nav>
 		<nav class="header-smart-menu">
 			
 				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">查找内容</a>
 				
 			
 				
@@ -162,6 +195,10 @@
 	</header>
 </div>
 
+ <script>
+  console.log('[object Object]');
+</script>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -175,7 +212,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/">
-					<img src="/img/%E5%A4%B4%E5%83%8F4.jpg" class="js-avatar">
+					<img src="/img/avatar.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -183,6 +220,8 @@
 			</hgroup>
 			
 			
+			
+				
 			
 				
 			
@@ -227,11 +266,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://zhousiwei.gitee.io/ibooks/">技术笔记</a></li>
+					<li style="width: 25%"><a target="_blank" rel="noopener" href="https://zhousiwei.gitee.io/ibooks/">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/">标签</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -265,8 +306,8 @@
     <header class="archive-article-header">
       	<div class="article-meta">
 	      	
-<a href="/2022/04/19/hello-world/" class="archive-article-date">
-        <time datetime="2022-04-19T15:45:37.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-19</time>
+<a href="/2022/04/21/hello/" class="archive-article-date">
+  最后更新:  <time datetime="2022-04-21T04:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
 </a>
 
         </div>
@@ -274,7 +315,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/2022/04/19/hello-world/">Hello World</a>
+	  <a class="archive-article-title" href="/2022/04/21/hello/">hello</a>
 	
     </h1>
   
@@ -336,10 +377,10 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -388,7 +429,7 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">查找内容</a></li>
       
         
       
@@ -463,7 +504,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">nickname:leftover 🙈<br> school: 井冈山大学计算机科学与技术专业2019级 😲<br/>favorite: 动漫,二次元⚔️,旅游🌄,乒乓球🏓,跑步🏃,捣鼓小玩意🧸 <br/> QQ:1614674987 🐧<br/> wish: 愿以后能够不再为了生活而奔波,做想做的事😉</div>
   	  	
     	</section>
     
