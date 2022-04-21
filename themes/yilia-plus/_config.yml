@@ -279,7 +279,7 @@ slider:
 #smart_menu:
 #  friends: false
 smart_menu:
-  innerArchive: '查找内容'
+  innerArchive: '搜索'
   friends: false
   aboutme: '关于我'
 
