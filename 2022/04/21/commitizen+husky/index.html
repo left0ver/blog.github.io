@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>Archives | leftover博客</title>
+  <title>commitizen +husky 实现commit之前eslint检查代码和规范commit的提交 | leftover博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="leftover的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="leftover博客">
-<meta property="og:url" content="http://leftover.cn/archives/index.html">
+  <meta name="description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交">
+<meta property="og:url" content="http://leftover.cn/2022/04/21/commitizen+husky/index.html">
 <meta property="og:site_name" content="leftover博客">
-<meta property="og:description" content="leftover的个人博客">
+<meta property="og:description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png">
+<meta property="article:published_time" content="2022-04-21T09:38:15.000Z">
+<meta property="article:modified_time" content="2022-04-21T10:17:11.372Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="前端工程化">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
   
     <link rel="alternative" href="/atom.xml" title="leftover博客" type="application/atom+xml">
   
@@ -328,178 +337,108 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-commitizen+husky" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E7%94%A8%20hexo+github%20page%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T10:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E7%94%A8%20hexo+github%20page%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">手把手教你用 hexo+github page 搭建博客</a>
-	
+    <h1 class="article-title" itemprop="name">
+      commitizen +husky 实现commit之前eslint检查代码和规范commit的提交
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T10:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">javascript的垃圾回收机制</a>
-	
-    </h1>
-  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/">在nuxt中使用vue-quill-editor 出现document is not defined</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">quill</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nuxt</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 <a href="/2022/04/21/commitizen+husky/" class="archive-article-date">
   最后更新:  <time datetime="2022-04-21T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/commitizen+husky/">commitizen +husky 实现commit之前eslint检查代码和规范commit的提交</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">210字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ol>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题</span></span><br><span class="line">npx husky-init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装完了之后可以去package.json的script里面配置</p>
+<span id="more"></span>
+
+<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png" alt="image-20220226210621805"></p>
+</li>
+</ol>
+<p>   之后会生成一个.husky文件夹，<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png" alt="image-20220226210708634"></p>
+<p>在箭头所示的文件夹中配置commit之前需要执行的命令，一般会配置一些eslint检查代码的命令，之后就可以了，当你commit代码的时候就会执行你配置的命令啦</p>
+<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png" alt="image-20220226210800988"></p>
+<ol start="2">
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行下面两个命令</span></span><br><span class="line">npm i commitizen -D</span><br><span class="line">commitizen init cz-conventional-changelog --save-dev --save-exact</span><br><span class="line"><span class="comment">/*然后在package.json的script里面配置一下命令，因为我们使用了husky，这里的命令不能使用commit,否则执行命令的时候会提交两次,到这里就完成啦，之后commit代码时会让你选择commit的message，如下图*/</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png" alt="image-20220226211100047"></li>
+</ol>
+<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png" alt="image-20220226211416581"></p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          leftover
+        </li>
+        <!-- <li>
+          <strong>本文链接：</strong>
+          <a href="http://leftover.cn/2022/04/21/commitizen+husky/" title="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交" target="_blank">http://leftover.cn/2022/04/21/commitizen+husky/</a>
+        </li> -->
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本文版权归leftover所有,如需转载清标明来源！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -515,156 +454,153 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/04/21/commitizen+husky/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在nuxt中使用vue-quill-editor 出现document is not defined
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux上安装pyspark</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/">Linux上安装pyspark</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">pyspark</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录溜走了~~
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
+    <section id="comments" class="comments">
+      
+ <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+  clientID: '4fae767a71e73af8bc69',
+  clientSecret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475',
+  repo: 'blog.github.io',
+  owner: 'left0ver',
+  admin: 'left0ver',
+  distractionFreeMode: 'true',
+  labels: 'Comment'.split(',').filter(l => l) ,
+})
+gitalk.render('gitalk-container')
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/">使用宝塔部署vue+node 的项目</a>
-	
-    </h1>
-  
+</script>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">宝塔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:24:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">阿里字体图标引用问题</a>
-	
-    </h1>
-  
+  </section>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">字体图标</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
 
 
           </div>
@@ -701,8 +637,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

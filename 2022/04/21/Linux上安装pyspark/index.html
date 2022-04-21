@@ -6,20 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>Archives | leftover博客</title>
+  <title>Linux上安装pyspark | leftover博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="leftover的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="leftover博客">
-<meta property="og:url" content="http://leftover.cn/archives/index.html">
+  <meta name="description" content="123&#x2F;&#x2F;先将文件下载到Windows上，再使用ssh工具连接虚拟机，并将这三个文件上传到虚拟机，不要使用wmware-tool将文件直接拖进虚拟机，这样可能会有部分文件没有被下载，文件地址：链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1-m4-SX0BuW20qmfusrfkHw 提取码：left">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux上安装pyspark">
+<meta property="og:url" content="http://leftover.cn/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/index.html">
 <meta property="og:site_name" content="leftover博客">
-<meta property="og:description" content="leftover的个人博客">
+<meta property="og:description" content="123&#x2F;&#x2F;先将文件下载到Windows上，再使用ssh工具连接虚拟机，并将这三个文件上传到虚拟机，不要使用wmware-tool将文件直接拖进虚拟机，这样可能会有部分文件没有被下载，文件地址：链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1-m4-SX0BuW20qmfusrfkHw 提取码：left">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/9ffb84007adf953ddfbc40b0da32ab86.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/466d3e68afac300d55fd2954c2dabc4e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2bd7a433bafcd2298ab351fa09380aba.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/3222f60cc93461efac6569af515a8127.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f109ce5e30b426b1fd5c831d0d070d51.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/3b4472b102fe5e60c789f3a78c8d7d34.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/4706d98ca46fcb30a6cfea9052764731.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7977892c7f1608d2eca62002a56177e8.png">
+<meta property="article:published_time" content="2022-04-21T09:34:53.000Z">
+<meta property="article:modified_time" content="2022-04-21T10:17:11.372Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="pyspark">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/9ffb84007adf953ddfbc40b0da32ab86.png">
   
     <link rel="alternative" href="/atom.xml" title="leftover博客" type="application/atom+xml">
   
@@ -328,225 +340,117 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Linux上安装pyspark" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E7%94%A8%20hexo+github%20page%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T10:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E7%94%A8%20hexo+github%20page%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">手把手教你用 hexo+github page 搭建博客</a>
-	
+    <h1 class="article-title" itemprop="name">
+      Linux上安装pyspark
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T10:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">javascript的垃圾回收机制</a>
-	
-    </h1>
-  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/">在nuxt中使用vue-quill-editor 出现document is not defined</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">quill</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nuxt</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/commitizen+husky/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/commitizen+husky/">commitizen +husky 实现commit之前eslint检查代码和规范commit的提交</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 <a href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" class="archive-article-date">
   最后更新:  <time datetime="2022-04-21T09:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/">Linux上安装pyspark</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">339字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先将文件下载到Windows上，再使用ssh工具连接虚拟机，并将这三个文件上传到虚拟机，不要使用wmware-tool将文件直接拖进虚拟机，这样可能会有部分文件没有被下载，文件地址：</span></span><br><span class="line">链接：https:<span class="comment">//pan.baidu.com/s/1-m4-SX0BuW20qmfusrfkHw </span></span><br><span class="line">提取码：left</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/9ffb84007adf953ddfbc40b0da32ab86.png" alt="image-20220226101103434"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/jdk</span><br><span class="line">mkdir /opt/apache-spark</span><br><span class="line">tar xvzf jdk-8u251-linux-x64.tar.gz -C /opt/jdk</span><br><span class="line">    </span><br><span class="line"> vim ~/.bashrc </span><br><span class="line"> <span class="comment">//添加下面两行</span></span><br><span class="line">export JAVA_HOME=/opt/jdk/jdk1<span class="number">.8</span><span class="number">.0_251</span>/jre</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">    </span><br><span class="line">source ~/.bashrc</span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf spark-<span class="number">2.3</span><span class="number">.4</span>-bin-hadoop2<span class="number">.7</span>.tgz -C /opt/apache-spark/</span><br><span class="line"> vim ~/.bashrc </span><br><span class="line"><span class="comment">//修改成这三行</span></span><br><span class="line">export JAVA_HOME=/opt/jdk/jdk1<span class="number">.8</span><span class="number">.0_251</span>/jre</span><br><span class="line">export SPARK_HOME=/opt/apache-spark/spark-<span class="number">2.3</span><span class="number">.4</span>-bin-hadoop2<span class="number">.7</span></span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$SPARK_HOME/bin</span><br><span class="line"><span class="comment">//使刚刚修改的配置文件生效</span></span><br><span class="line">source ~/.bashrc</span><br><span class="line"><span class="comment">//测试有没有安装成功spark</span></span><br><span class="line">spark-shell</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/466d3e68afac300d55fd2954c2dabc4e.png" alt="image-20220226091258772"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2bd7a433bafcd2298ab351fa09380aba.png" alt="image-20220226091146303"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/python3</span><br><span class="line">tar -zxvf Python-<span class="number">3.6</span><span class="number">.5</span>.tgz -C /opt/python3/</span><br><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc</span><br></pre></td></tr></table></figure>
+
+<p><strong>安装完了会出现如图所示的complete</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/3222f60cc93461efac6569af515a8127.png" alt="image-20220226092246667"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/python3/Python-<span class="number">3.6</span><span class="number">.5</span></span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line"><span class="comment">//等待一小会</span></span><br><span class="line">make &amp;&amp; makeinstall</span><br><span class="line"><span class="comment">//等待几分钟，出现下图</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/f109ce5e30b426b1fd5c831d0d070d51.png" alt="image-20220226092813454"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立软链接</span></span><br><span class="line">ln -s /usr/local/python3/bin/python3 /usr/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3</span><br><span class="line"> <span class="comment">//输入python3，出现下图所示</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/3b4472b102fe5e60c789f3a78c8d7d34.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">vim ~/.bashrc  </span><br><span class="line"><span class="comment">//添加下面这一行，如下图所示</span></span><br><span class="line">export PYSPARK_PYTHON=python3</span><br><span class="line"><span class="comment">//使配置生效</span></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/4706d98ca46fcb30a6cfea9052764731.png" alt="image-20220226100003281"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pyspark</span><br><span class="line"><span class="comment">//出现下图所示</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/7977892c7f1608d2eca62002a56177e8.png" alt="image-20220226095411859"><br><strong>动动小手，点个赞！</strong></p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          leftover
+        </li>
+        <!-- <li>
+          <strong>本文链接：</strong>
+          <a href="http://leftover.cn/2022/04/21/Linux上安装pyspark/" title="Linux上安装pyspark" target="_blank">http://leftover.cn/2022/04/21/Linux上安装pyspark/</a>
+        </li> -->
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本文版权归leftover所有,如需转载清标明来源！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -562,109 +466,153 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/04/21/commitizen+husky/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          commitizen +husky 实现commit之前eslint检查代码和规范commit的提交
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用宝塔部署vue+node 的项目</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/">使用宝塔部署vue+node 的项目</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">宝塔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录溜走了~~
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:24:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">阿里字体图标引用问题</a>
-	
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">字体图标</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
+  
+    <section id="comments" class="comments">
+      
+ <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+  clientID: '4fae767a71e73af8bc69',
+  clientSecret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475',
+  repo: 'blog.github.io',
+  owner: 'left0ver',
+  admin: 'left0ver',
+  distractionFreeMode: 'true',
+  labels: 'Comment'.split(',').filter(l => l) ,
+})
+gitalk.render('gitalk-container')
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+</script>
 
-    
+
+  </section>
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -701,8 +649,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
