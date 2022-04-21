@@ -247,7 +247,7 @@ live2d:
     position: right # 显示位置：left/right(default: 'right')
     width: 145  # 模型的长度(default: 150)
     height: 315 # 模型的高度(default: 300)
-    hOffset: 70 # 水平偏移(default: 0)
+    hOffset: 50 # 水平偏移(default: 0)
     #vOffset: -20 # 垂直偏移(default: -20)
   mobile:
     show: true # 是否在移动设备上显示(default: true)
