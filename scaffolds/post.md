@@ -2,6 +2,5 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories:
-copyright: false
+# 所有文章都设有版权和目录
 ---

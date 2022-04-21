@@ -16,11 +16,22 @@
 		<%}%>
 
 		<nav class="header-menu">
-			<ul>
+			<!-- <ul>
 			<% for (var i in theme.menu){ %>
 				<li><a href="<%- url_for(theme.menu[i]) %>" <% if (theme.open_in_new.menu){ %>target="_blank"<% } %>><%= i %></a></li>
 			<%}%>
-			</ul>
+			</ul> -->
+      <div class="tagcloud" id="tags-title">
+          <div><a href="javascript:void(0)">标签云</a>⬇️</div>
+      </div>
+
+      <div class="tags tagcloud">
+        <% for (var i in theme.tags){ %>
+          <div>
+            <a class="color<%=1+Math.floor(Math.random()*11)%>" href="<%- url_for(theme.tags[i]) %>"> <%= i %></a>
+          </div>
+          <%}%>
+      </div>
 		</nav>
 		<nav class="header-smart-menu">
 			<% for (var i in theme.smart_menu){ %>
@@ -66,3 +77,7 @@
 		</nav>
 	</header>
 </div>
+
+ <script>
+  console.log('<%=theme.tags%>');
+</script>

@@ -2,7 +2,8 @@
 menu:
   主页: /
   技术笔记: https://zhousiwei.gitee.io/ibooks/
-  随笔: /tags/随笔/
+  标签: /tags/
+  分类: /categories/
 
 # subNav-子导航
 subNav:
@@ -14,9 +15,6 @@ subNav:
   - qq: "img/qq.jpg"
   # - weixin: "img/weixin_.png"
   - bilibili: "https://space.bilibili.com/646733181"
-  # - mail: ""
-  # - google: "#"
-  # - twitter: "#"
 
 # 悬停预览图片效果
 hover_effect:
@@ -66,7 +64,7 @@ weixin: /img/weixin.png
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
 toc: 2
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
-toc_hide_index: true
+toc_hide_index: false
 # 目录为空时的提示
 toc_empty_wording: '目录溜走了~~'
 
@@ -82,7 +80,7 @@ google_analytics: ''
 favicon: /favicon.ico
 
 # 你的头像url
-avatar: /img/头像4.jpg
+avatar: /img/avatar.jpg
 
 # 是否开启分享
 share_jia: true
@@ -190,9 +188,9 @@ baidu_push: true
 
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
-copyright_type: 1
+copyright_type: 2
 # 版权声明自定义文本(关闭请设置为false)
-copyright_text: '本文的内容不得转载,如需转载需经过本人同意！'
+copyright_text: '本文版权归leftover所有,如需转载清标明来源！'
 
 # 网站成立年份(默认为 2018，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
 since: 2022
@@ -273,7 +271,7 @@ style:
 # slider的设置
 slider:
   # 是否默认展开tags板块
-  showTags: true
+  showTags: false
 
 # 智能菜单
 # 如不需要，将该对应项置为false
@@ -281,7 +279,7 @@ slider:
 #smart_menu:
 #  friends: false
 smart_menu:
-  innerArchive: '所有文章'
+  innerArchive: '查找内容'
   friends: false
   aboutme: '关于我'
 
@@ -304,4 +302,5 @@ friends:
     url: https://blog.csdn.net/qq_30930805
 
 # 关于我
-aboutme: 'nickname:leftover 🙈<br> school: 井冈山大学计算机科学与技术专业2019级 😲<br/>favorite: 动漫,二次元⚔️,旅游🌄,乒乓球🏓,跑步🏃,捣鼓小玩意🧸 <br/> QQ:1614674987 🐧<br/> wish: 愿以后能够不再为了生活而奔波,做想做的事😉'
+aboutme:
+
