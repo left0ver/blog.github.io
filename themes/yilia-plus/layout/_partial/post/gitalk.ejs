@@ -9,6 +9,7 @@ var gitalk = new Gitalk({
   repo: '<%=theme.gitalk.repo%>',
   owner: '<%=theme.gitalk.owner%>',
   admin: '<%=theme.gitalk.admin%>',
+  id: location.href.slice(location.href.length-15),
   distractionFreeMode: '<%=theme.gitalk.distraction_free_mode%>',
   labels: '<%=theme.gitalk.labels%>'.split(',').filter(l => l) ,
 })
