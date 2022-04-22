@@ -130,6 +130,7 @@ gitalk:
   repo: 'blog.github.io'
   owner: 'left0ver'
   admin: ['left0ver']
+  id: location.href
   distraction_free_mode: true
   labels: ['Comment']
 # 访问量统计功能(不蒜子)
