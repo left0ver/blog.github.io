@@ -8,11 +8,12 @@ tags:
 
  1. **先讲讲后端部署的方法吧**
 
-         
+   ​      
 
  - 我是用pm2来部署node项目，数据库的配置如下：
 
-          
+   ​       
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/be787e1545cc4b52bcfd562862900646.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGVmdDB2ZXI=,size_20,color_FFFFFF,t_70,g_se,x_16)
 <!-- more -->
 
@@ -27,7 +28,7 @@ tags:
 把这些东西修改好了之后就可以了，然后用宝塔的pm2部署一下，很简单，这里我就不赘述了
 
  2. **这里讲一下怎么部署前端，这一部分内容需要和下面nginx配置代理相关联**
- 
+
 **前端这里我在每个请求的前面都加上了一个/api，**如下
 
 ```javascript
@@ -36,7 +37,7 @@ tags:
 这里的/api和待会nginx配置代理有关联
 
 **前面的地址就填你的域名，或者你的服务器的ip地址**
- 
+
 
  **3. 接下来配置一个nginx代理，**
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/f8c7b0c3f05a463699fc3b157589b022.png)
