@@ -6,29 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>commitizen +husky 实现commit之前eslint检查代码和规范commit的提交 | 码上神域</title>
+  <title>react-router v6详解 | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+  <meta name="description" content="router组件简单介绍 使用Navigate组件来进行重定向  v6中的Routes相当于v5的switch  route里面也可以嵌套子路由，可以使用Outlet组件来实现类似router-view 的效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交">
-<meta property="og:url" content="http://leftover.cn/2022/04/21/commitizen+husky/index.html">
+<meta property="og:title" content="react-router v6详解">
+<meta property="og:url" content="http://leftover.cn/2022/05/21/react-router%20v6%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+<meta property="og:description" content="router组件简单介绍 使用Navigate组件来进行重定向  v6中的Routes相当于v5的switch  route里面也可以嵌套子路由，可以使用Outlet组件来实现类似router-view 的效果">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png">
-<meta property="article:published_time" content="2022-04-21T09:38:15.000Z">
-<meta property="article:modified_time" content="2022-04-25T09:18:57.118Z">
+<meta property="article:published_time" content="2022-05-21T09:54:33.000Z">
+<meta property="article:modified_time" content="2022-05-21T09:56:50.715Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="git">
-<meta property="article:tag" content="前端工程化">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
   
@@ -341,14 +334,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-commitizen+husky" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react-router v6详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      commitizen +husky 实现commit之前eslint检查代码和规范commit的提交
+      react-router v6详解
     </h1>
   
 
@@ -360,8 +353,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/04/21/commitizen+husky/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
+<a href="/2022/05/21/react-router%20v6%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  最后更新:  <time datetime="2022-05-21T09:54:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-21</time>
 </a>
 
   
@@ -374,7 +367,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">210字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -383,7 +376,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -394,24 +387,50 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题</span></span><br><span class="line">npx husky-init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>安装完了之后可以去package.json的script里面配置</p>
+    <h2 id="router组件简单介绍"><a href="#router组件简单介绍" class="headerlink" title="router组件简单介绍"></a>router组件简单介绍</h2><ul>
+<li><p>使用<code>Navigate</code>组件来进行重定向</p>
+</li>
+<li><p>v6中的<code>Routes</code>相当于v5的<code>switch</code></p>
+</li>
+<li><p><code>route</code>里面也可以嵌套子路由，可以使用<code>Outlet</code>组件来实现类似<code>router-view</code> 的效果</p>
+</li>
+</ul>
 <span id="more"></span>
 
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png" alt="image-20220226210621805"></p>
+<ul>
+<li><p><code>Route</code>组件里面的index属性,可以在没有匹配到任何子元素的时候显示某个组件,可以用来做默认显示的值，使用index属性时不可以有path属性,如下示例</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Route</span> path=<span class="string">&#x27;/profile&#x27;</span> element=&#123;<span class="language-xml"><span class="tag">&lt;<span class="name">Profile</span> /&gt;</span></span>&#125;&gt;</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span>  <span class="attr">index</span>  <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProfileSetting</span>/&gt;</span>&#125;&gt;<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span>  <span class="attr">path</span>=<span class="string">&quot;setting&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProfileSetting</span>/&gt;</span>&#125;&gt;<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span>  <span class="attr">path</span>=<span class="string">&quot;detail&quot;</span>  <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProfileDetail</span>/&gt;</span>&#125;&gt;<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Route</span>&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="react-router-hooks"><a href="#react-router-hooks" class="headerlink" title="react-router-hooks"></a>react-router-hooks</h2><ol>
+<li><p><code>useHref</code>，给一个to,返回一个相对于当前路由的链接，例如</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> href = <span class="title function_">useHref</span>(<span class="string">&quot;setting&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(href); <span class="comment">//当前路由是/profile/detail,返回/profile/detail/setting</span></span><br><span class="line"><span class="comment">//如果给的是绝对链接，则返回这个绝对链接</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>useInRouterContext</code>，返回当前组件是否在react-router之中的一个布尔值，对于一些想知道当前组件有没有使用react-router的第三方扩展非常有用</p>
+</li>
+<li><p><code>useLocation </code>返回一个当前的路由对象，对象的格式如下：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">hash</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">key</span>: <span class="string">&quot;default&quot;</span></span><br><span class="line">    <span class="attr">pathname</span>: <span class="string">&quot;/cart/1&quot;</span></span><br><span class="line">	<span class="attr">search</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">	<span class="attr">state</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><code> useNavigate</code> 返回一个<code>NavigateFunction</code>，可以利用返回的函数进行编程式导航，相当于<code>Navigate</code>组件</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> navigate = <span class="title function_">useNavigate</span>()</span><br><span class="line"> <span class="title function_">navigate</span>(<span class="string">&#x27;/home&#x27;</span>,&#123;<span class="attr">replace</span>:<span class="literal">true</span>,<span class="attr">state</span>:&#123;<span class="attr">name</span>:<span class="string">&#x27;zwc666&#x27;</span>&#125;&#125;)</span><br><span class="line"><span class="comment">//在home页面的组件中可以使用useLocation获取到传过去的state</span></span><br><span class="line"><span class="comment">//也可以navigate(-1)</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>useNavigationType</code> 返回NavigationType,可以用来判断是怎么来到该页面的，用的不多</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">NavigationType</span> = <span class="string">&quot;POP&quot;</span> | <span class="string">&quot;PUSH&quot;</span> | <span class="string">&quot;REPLACE&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>useOutlet</code>返回一个<code>React.ReactElement</code>，作用和<code>Outlet</code>组件差不多</p>
+</li>
+<li><p><code>useOutletContext</code> ，当父路由使用了<code>Outlet</code>组件时，可以使用context属性向子路由传递一些数据</p>
+<p><code>useOutletContext</code>则可以接收父路由传递过来的数据</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Outlet</span>,,useOutlet,useOutletContext&#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span></span><br><span class="line"><span class="comment">//导出类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> contextType=[<span class="built_in">number</span>,<span class="title class_">React</span>.<span class="property">Dispatch</span>&lt;<span class="title class_">React</span>.<span class="property">SetStateAction</span>&lt;<span class="built_in">number</span>&gt;&gt;]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Parent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [count,setCount] =useState&lt;<span class="built_in">number</span>&gt;(<span class="number">55</span>)</span><br><span class="line">    <span class="keyword">const</span> <span class="title class_">Element</span> = <span class="title function_">useOutlet</span>([count,setCount])</span><br><span class="line"> 	 <span class="keyword">return</span> (</span><br><span class="line">    	<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            Profile</span></span><br><span class="line"><span class="language-xml">            &#123;/* <span class="tag">&lt;<span class="name">Outlet</span> /&gt;</span> */&#125;</span></span><br><span class="line"><span class="language-xml">            &#123;Element&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在父路由中定义一个hooks,提前给useOutletContext设置好类型，这样子路由就可以不需要再设置类型了，直接调用即可</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">useCount</span> () &#123;</span><br><span class="line">  <span class="keyword">return</span> useOutletContext&lt;contextType&gt;()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1.在ts中，要先在父组件中定义好context的类型，然后子组件使用useOutletContext的时候设置类型</span></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">type</span> &#123;contextType&#125; <span class="keyword">from</span> <span class="string">&#x27;../Parent/index&#x27;</span></span><br><span class="line"><span class="comment">//第二种,直接导入定义好类型的hooks,然后直接使用即可</span></span><br><span class="line"><span class="keyword">import</span> &#123; useCount &#125; <span class="keyword">from</span> <span class="string">&#x27;../Parent/index&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Son</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//设置类型</span></span><br><span class="line">   <span class="keyword">const</span> [count,setCount] = useOutletContext&lt;contextType&gt;()</span><br><span class="line">   <span class="comment">//第二种</span></span><br><span class="line">   <span class="comment">//const [count,setCount]= useCount()</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>setCount(count+1)&#125;&gt;点我加1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p><code>useParams </code>用来获取当前路由的params</p>
+</li>
+<li><p><code>useResolvedPath </code>用来解析给定的路径，可以传入相对url，和绝对的url，返回一个对象</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">pathname</span>: <span class="string">&#x27;/cart/12/hhhxixi&#x27;</span>,</span><br><span class="line">    <span class="attr">search</span>: <span class="string">&#x27;&#x27;</span>, </span><br><span class="line">    <span class="attr">hash</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>useRoutes </code>，传入一个路由的数组，返回对应要展示的组件，有点类似于vue的路由的配置，可以在别的文件夹配置好路由，然后传入APP.tsx中</p>
+</li>
+<li><p><code>useSearchParams</code>返回一个数据,第一个是searchParams，第二个是setSearchParams,用来更新searchParams，</p>
+<p>searchParams是一个map集合,如果要获取某个参数,可以使用map集合的get方法</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [searchParams, setSearchParams] = <span class="title function_">useSearchParams</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(searchParams.<span class="title function_">get</span>(<span class="string">&#x27;age&#x27;</span>));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> [key,value] <span class="keyword">of</span> searchParams) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(key,value);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>useLinkClickHandler</code>这个hooks返回一个点击事件的处理函数，可以用来创建一个自定义跳转link,点击之后即可跳转到目标链接，可以传递一个to（目标链接），和一个options</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">to</span>: <span class="title class_">To</span>,</span><br><span class="line">  options?: &#123;</span><br><span class="line">    target?: <span class="title class_">React</span>.<span class="property">HTMLAttributeAnchorTarget</span>;</span><br><span class="line">    replace?: <span class="built_in">boolean</span>;</span><br><span class="line">    state?: <span class="built_in">any</span>;</span><br><span class="line">        &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//返回一个函数，函数调用时需要传递对应的event，使用方法如下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> clickHandler =useLinkClickHandler&lt;<span class="title class_">HTMLButtonElement</span>&gt;(<span class="string">&quot;/profile/setting&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">//点击了按钮就会跳转到/profile/setting</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(event)</span>=&gt;</span>clickHandler(event)&#125;&gt;点我跳转到/profile/setting&quot;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+<li><p>注意：<strong>路由懒加载时要配合Suspense组件一起使用，如果你使用useRoutes这个hooks返回对应的要渲染的路由元素时，不能使用路由懒加载，使用了懒加载的页面会出现空白或者报错</strong>，期待后面可以修复。</p>
 </li>
 </ol>
-<p>   之后会生成一个.husky文件夹，<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png" alt="image-20220226210708634"></p>
-<p>在箭头所示的文件夹中配置commit之前需要执行的命令，一般会配置一些eslint检查代码的命令，之后就可以了，当你commit代码的时候就会执行你配置的命令啦</p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png" alt="image-20220226210800988"></p>
-<ol start="2">
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行下面两个命令</span></span><br><span class="line">npm i commitizen -D</span><br><span class="line">commitizen init cz-conventional-changelog --save-dev --save-exact</span><br><span class="line"><span class="comment">/*然后在package.json的script里面配置一下命令，因为我们使用了husky，这里的命令不能使用commit,否则执行命令的时候会提交两次,到这里就完成啦，之后commit代码时会让你选择commit的message，如下图*/</span></span><br></pre></td></tr></table></figure>
-
-<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png" alt="image-20220226211100047"></li>
-</ol>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png" alt="image-20220226211416581"></p>
 
     
 
@@ -426,7 +445,7 @@
         </li>
         <!-- <li>
           <strong>本文链接：</strong>
-          <a href="http://leftover.cn/2022/04/21/commitizen+husky/" title="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交" target="_blank">http://leftover.cn/2022/04/21/commitizen+husky/</a>
+          <a href="http://leftover.cn/2022/05/21/react-router v6详解/" title="react-router v6详解" target="_blank">http://leftover.cn/2022/05/21/react-router v6详解/</a>
         </li> -->
         
         <li>
@@ -448,11 +467,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -508,7 +523,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/04/21/commitizen+husky/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/05/21/react-router%20v6%E8%AF%A6%E8%A7%A3/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -523,18 +538,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          在nuxt中使用vue-quill-editor 出现document is not defined
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux上安装pyspark</div>
+    <a href="/2022/04/28/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">代码规范最佳实践</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -562,7 +568,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录溜走了~~
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#router%E7%BB%84%E4%BB%B6%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">router组件简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-router-hooks"><span class="toc-number">2.</span> <span class="toc-text">react-router-hooks</span></a></li></ol>
                     </div>
                 </span>
             </div>
