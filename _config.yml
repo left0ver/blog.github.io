@@ -98,6 +98,7 @@ theme_config:
   # 有新标签时，需在这里配置
   tags:
     vue: /tags/vue
+    react: /tags/react
     javaScript: /tags/javaScript
     html: /tags/html
     css: /tags/css
