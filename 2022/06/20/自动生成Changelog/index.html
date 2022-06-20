@@ -6,29 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>commitizen +husky 实现commit之前eslint检查代码和规范commit的提交 | 码上神域</title>
+  <title>自动生成Changelog | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+  <meta name="description" content="使用release-please生成Changelog 以前可能很多人使用standard-version来生成对应的Changelog，现在已经不推荐使用这个库了，这个作者推荐使用 release-please库来自动生成Changelog。  使用release-please最简单的方式就是利用GitHub action，当你push的时候生成对应的Changelog，官方的仓库的文档里也有对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交">
-<meta property="og:url" content="http://leftover.cn/2022/04/21/commitizen+husky/index.html">
+<meta property="og:title" content="自动生成Changelog">
+<meta property="og:url" content="http://leftover.cn/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+<meta property="og:description" content="使用release-please生成Changelog 以前可能很多人使用standard-version来生成对应的Changelog，现在已经不推荐使用这个库了，这个作者推荐使用 release-please库来自动生成Changelog。  使用release-please最简单的方式就是利用GitHub action，当你push的时候生成对应的Changelog，官方的仓库的文档里也有对">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png">
-<meta property="article:published_time" content="2022-04-21T09:38:15.000Z">
-<meta property="article:modified_time" content="2022-04-25T09:18:57.118Z">
+<meta property="article:published_time" content="2022-06-20T04:14:36.000Z">
+<meta property="article:modified_time" content="2022-06-20T04:20:44.130Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="git">
 <meta property="article:tag" content="前端工程化">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
   
@@ -341,14 +334,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-commitizen+husky" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-自动生成Changelog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      commitizen +husky 实现commit之前eslint检查代码和规范commit的提交
+      自动生成Changelog
     </h1>
   
 
@@ -360,8 +353,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/04/21/commitizen+husky/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
+<a href="/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/" class="archive-article-date">
+  最后更新:  <time datetime="2022-06-20T04:14:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-20</time>
 </a>
 
   
@@ -374,7 +367,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">210字</span>
+      <span class="post-count">661字</span>
     </span>
   </span>
 
@@ -383,7 +376,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -394,24 +387,27 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题</span></span><br><span class="line">npx husky-init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>安装完了之后可以去package.json的script里面配置</p>
-<span id="more"></span>
-
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png" alt="image-20220226210621805"></p>
+    <h1 id="使用release-please生成Changelog"><a href="#使用release-please生成Changelog" class="headerlink" title="使用release-please生成Changelog"></a>使用release-please生成Changelog</h1><ul>
+<li><p>以前可能很多人使用<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/standard-version">standard-version</a>来生成对应的Changelog，现在已经不推荐使用这个库了，这个作者推荐使用 <a target="_blank" rel="noopener" href="https://github.com/googleapis/release-please">release-please</a>库来自动生成Changelog。</p>
 </li>
-</ol>
-<p>   之后会生成一个.husky文件夹，<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png" alt="image-20220226210708634"></p>
-<p>在箭头所示的文件夹中配置commit之前需要执行的命令，一般会配置一些eslint检查代码的命令，之后就可以了，当你commit代码的时候就会执行你配置的命令啦</p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png" alt="image-20220226210800988"></p>
-<ol start="2">
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行下面两个命令</span></span><br><span class="line">npm i commitizen -D</span><br><span class="line">commitizen init cz-conventional-changelog --save-dev --save-exact</span><br><span class="line"><span class="comment">/*然后在package.json的script里面配置一下命令，因为我们使用了husky，这里的命令不能使用commit,否则执行命令的时候会提交两次,到这里就完成啦，之后commit代码时会让你选择commit的message，如下图*/</span></span><br></pre></td></tr></table></figure>
-
-<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png" alt="image-20220226211100047"></li>
-</ol>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png" alt="image-20220226211416581"></p>
+<li><p>使用release-please最简单的方式就是利用GitHub action，当你push的时候生成对应的Changelog，官方的仓库的文档里也有对应的说明，当然也可以使用命令行的方法来生成对应的Changelog，感兴趣的同学可以自行查阅</p>
+<span id="more"></span></li>
+<li><p>release-please会根据你的commit来生成对应的Changelog，所以commit一定要规范，否则将不能起到对应的效果</p>
+</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>我自己有尝试使用release-please配合GitHub Action来生成对应的Changelog,它是根据你的commit来进行对应的版本的更改的，一般修复bug，他会修改最后一个版本号，<code>fix: a bug</code> ，如果有一个新特性<code>feat: a new feat </code>,那么他会升级中间的版本号，如果有什么破坏性的更改，那么他会升级第一个版本号,例如<code>feat!: a break change</code></li>
+<li>虽然这样子听起来也挺合理，但是有时候我们有一些小的新特性，但这时候并不想升级中间的那个版本号，而是只想<code>patch</code>,升级最后一个版本号，使用release-please就很难满足我们的需求，而且release-please是自动升级版本号，但是我们大多数情况下还是想要将版本号控制在自己的手中，自己来决定版本的升级，于是我使用了<a target="_blank" rel="noopener" href="https://github.com/antfu">antfu</a>大神的<a target="_blank" rel="noopener" href="https://github.com/antfu/changelogithub">changelogithub</a></li>
+</ul>
+<h1 id="使用changelogithub生成Changelog"><a href="#使用changelogithub生成Changelog" class="headerlink" title="使用changelogithub生成Changelog"></a>使用changelogithub生成Changelog</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/antfu/changelogithub">changelogithub</a>使用起来也是非常滴简单,也是基于GitHub Action来实现对应的Changelog的生成，当你push一个tag的时候将触发workflow，根据你push的tag的版本号来生成对应的Changelog，这样就将版本的控制掌握在自己的手中了</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .github/workflows/release.yml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">tags:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;v*&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">release:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">fetch-depth:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">changelogithub</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_TOKEN:</span> <span class="string">$&#123;&#123;secrets.GITHUB_TOKEN&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="自己的理解"><a href="#自己的理解" class="headerlink" title="自己的理解"></a>自己的理解</h1><ul>
+<li>现在一般会将fix，和feat或者Breaking Changes部分的内容生成Changelog，因为这些内容才是需要用户知道的东西，而其他的一些东西的修改，比如说<code>docs: xxx </code>,  <code>style:xxx</code>等commit则不需要生成对应的Changelog，现在大多数的库也是这样做的</li>
+<li>想要自动生成Changelog，首先必须得有规范的commit，可以使用commitizen配和commitlint，husky来对规范项目的commit</li>
+<li>建议使用<code>changelogithub</code>来自动生成Changelog，将版本的更改控制在自己手中</li>
+</ul>
 
     
 
@@ -426,7 +422,7 @@
         </li>
         <!-- <li>
           <strong>本文链接：</strong>
-          <a href="http://leftover.cn/2022/04/21/commitizen+husky/" title="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交" target="_blank">http://leftover.cn/2022/04/21/commitizen+husky/</a>
+          <a href="http://leftover.cn/2022/06/20/自动生成Changelog/" title="自动生成Changelog" target="_blank">http://leftover.cn/2022/06/20/自动生成Changelog/</a>
         </li> -->
         
         <li>
@@ -447,10 +443,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
         		</li>
@@ -508,7 +500,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/04/21/commitizen+husky/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -523,18 +515,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          在nuxt中使用vue-quill-editor 出现document is not defined
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/21/Linux%E4%B8%8A%E5%AE%89%E8%A3%85pyspark/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux上安装pyspark</div>
+    <a href="/2022/05/21/react-router%20v6%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-router v6详解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -562,7 +545,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录溜走了~~
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8release-please%E7%94%9F%E6%88%90Changelog"><span class="toc-number">1.</span> <span class="toc-text">使用release-please生成Changelog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8changelogithub%E7%94%9F%E6%88%90Changelog"><span class="toc-number">2.</span> <span class="toc-text">使用changelogithub生成Changelog</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">自己的理解</span></a></li></ol>
                     </div>
                 </span>
             </div>
