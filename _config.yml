@@ -103,7 +103,7 @@ theme_config:
     html: /tags/html
     css: /tags/css
     哆啦A梦的口袋: /tags/哆啦A梦的口袋
-    daily: /tags/daily
+    daily: /categories/daily
     git: /tags/git
     前端工程化: /tags/前端工程化
     部署: /tags/部署
