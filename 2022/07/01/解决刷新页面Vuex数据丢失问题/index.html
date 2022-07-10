@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>实习的第四天 | 码上神域</title>
+  <title>解决刷新页面Vuex数据丢失问题 | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="近期的状况 公司人员比较少,现在这个项目就我一个前端，感觉开发流程也不是很规范，和我来实习之前预想的差别有点子大，不过没关系，就当提升业务能力啦 做的是一个后台管理系统，是一个以前没有接触过的东西,也是学到了挺多东西,一开始本来想用vue3的后台管理框架vue-vben-admin,上手了1-2天，感觉这个框架难度有点子大，对新手不大友好，然后又要赶工期，后面换成了vue2的 vue-elemen">
+  <meta name="description" content="我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化  自己实现    我们可以在刷新页面之前将数据存储到 sessionStorage 、 localStorage、cookie 里面，然后我们进入页面之前从 sessionStorage 、 localStorage 、 cookie 里面读取数据保">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习的第四天">
-<meta property="og:url" content="http://leftover.cn/2022/04/21/%E5%AE%9E%E4%B9%A0%E7%9A%84%E7%AC%AC%E5%9B%9B%E5%A4%A9/index.html">
+<meta property="og:title" content="解决刷新页面Vuex数据丢失问题">
+<meta property="og:url" content="http://leftover.cn/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="近期的状况 公司人员比较少,现在这个项目就我一个前端，感觉开发流程也不是很规范，和我来实习之前预想的差别有点子大，不过没关系，就当提升业务能力啦 做的是一个后台管理系统，是一个以前没有接触过的东西,也是学到了挺多东西,一开始本来想用vue3的后台管理框架vue-vben-admin,上手了1-2天，感觉这个框架难度有点子大，对新手不大友好，然后又要赶工期，后面换成了vue2的 vue-elemen">
+<meta property="og:description" content="我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化  自己实现    我们可以在刷新页面之前将数据存储到 sessionStorage 、 localStorage、cookie 里面，然后我们进入页面之前从 sessionStorage 、 localStorage 、 cookie 里面读取数据保">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-21T09:24:28.000Z">
-<meta property="article:modified_time" content="2022-06-28T13:17:24.297Z">
+<meta property="article:published_time" content="2022-07-01T06:04:28.000Z">
+<meta property="article:modified_time" content="2022-07-01T12:04:32.551Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
@@ -113,71 +113,71 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color4" href="/tags/vue"> vue</a>
+            <a class="color9" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color9" href="/tags/react"> react</a>
+            <a class="color10" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color7" href="/tags/javaScript"> javaScript</a>
+            <a class="color11" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color1" href="/tags/html"> html</a>
+            <a class="color9" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/css"> css</a>
+            <a class="color4" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color5" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
-            <a class="color8" href="/categories/daily"> daily</a>
+            <a class="color2" href="/categories/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color1" href="/tags/git"> git</a>
+            <a class="color4" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color2" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color9" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color4" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%AE%9D%E5%A1%94"> 宝塔</a>
+            <a class="color3" href="/tags/%E5%AE%9D%E5%A1%94"> 宝塔</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/Linux"> Linux</a>
+            <a class="color4" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/hexo"> hexo</a>
+            <a class="color7" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color8" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/pyspark"> pyspark</a>
+            <a class="color11" href="/tags/pyspark"> pyspark</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/quill"> quill</a>
+            <a class="color2" href="/tags/quill"> quill</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/nuxt"> nuxt</a>
+            <a class="color8" href="/tags/nuxt"> nuxt</a>
           </div>
           
       </div>
@@ -334,14 +334,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-实习的第四天" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-解决刷新页面Vuex数据丢失问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      实习的第四天
+      解决刷新页面Vuex数据丢失问题
     </h1>
   
 
@@ -353,8 +353,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/04/21/%E5%AE%9E%E4%B9%A0%E7%9A%84%E7%AC%AC%E5%9B%9B%E5%A4%A9/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:24:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-28</time>
+<a href="/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  最后更新:  <time datetime="2022-07-01T06:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-01</time>
 </a>
 
   
@@ -367,7 +367,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">248字</span>
+      <span class="post-count">348字</span>
     </span>
   </span>
 
@@ -387,15 +387,24 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="近期的状况"><a href="#近期的状况" class="headerlink" title="近期的状况"></a>近期的状况</h1><ul>
-<li>公司人员比较少,现在这个项目就我一个前端，感觉开发流程也不是很规范，和我来实习之前预想的差别有点子大，不过没关系，就当提升业务能力啦</li>
-<li>做的是一个后台管理系统，是一个以前没有接触过的东西,也是学到了挺多东西,一开始本来想用vue3的后台管理框架<code>vue-vben-admin</code>,上手了1-2天，感觉这个框架难度有点子大，对新手不大友好，然后又要赶工期，后面换成了vue2的 <code>vue-element-admin</code></li>
-<li>今天进行了一下前后端接口的联调，把登录，注册的接口完善了一下，也完善了一下错误处理</li>
+    <p>我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化</p>
+<ol>
+<li>自己实现</li>
+</ol>
+<ul>
+<li><p> 我们可以在刷新页面之前将数据存储到 <code>sessionStorage</code> 、 <code>localStorage</code>、<code>cookie</code> 里面，然后我们进入页面之前从 <code>sessionStorage</code> 、 <code>localStorage</code> 、 <code>cookie</code> 里面读取数据保存到 Vuex 里即可，具体的代码如下：</p>
+</li>
+<li><p> ,如果用户退出浏览器，则 <code>sessionStorage</code> 里面的数据就消失了，而 <code>localStorage</code> 里的数据除非你自己手动清除，否则一直存在，而 cookie 一般是有时效性的，而且    cookie 里面可以存储的数据大小有限，最多只能储存 <code>4KB</code> 的数据</p>
+</li>
+<li><p>个人建议储存在 <code>sessionStorage</code> 里面会更好</p>
+</li>
 </ul>
-<h1 id="今后的安排"><a href="#今后的安排" class="headerlink" title="今后的安排"></a>今后的安排</h1><ul>
-<li>上班之余学一下jest，有利于以后npm包的开发</li>
-<li>做一个基于vue3+ts+pinia+element-plus后台管理框架，方便以后接私活（还是赚钱实在）</li>
-</ul>
+<span id="more"></span>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  APP.vue</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="title function_">created</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> oldStore = sessionStorage.<span class="title function_">getItem</span>(<span class="string">&#x27;store&#x27;</span>)</span><br><span class="line">    <span class="comment">// 第一次进入页面时为null，后面如果刷新页面将会有值，则会替换Vuex里面的数据</span></span><br><span class="line">    <span class="keyword">if</span> (oldStore !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">replaceState</span>(</span><br><span class="line">        <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>, <span class="title class_">JSON</span>.<span class="title function_">parse</span>(oldStore))</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 监听页面刷新，将store里面的数据保存到sessionStorage</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;beforeunload&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      sessionStorage.<span class="title function_">setItem</span>(<span class="string">&#x27;store&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(<span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用插件</li>
+</ol>
+<p>  你可以使用 <a target="_blank" rel="noopener" href="https://github.com/robinvdvleuten/vuex-persistedstate">vuex-persistedstate</a> 这个插件，本质的原理也是使用了本地的储存，也可以分别存储在 cookie , sessionStorage , localStorage 里面</p>
 
     
 
@@ -410,7 +419,7 @@
         </li>
         <!-- <li>
           <strong>本文链接：</strong>
-          <a href="http://leftover.cn/2022/04/21/实习的第四天/" title="实习的第四天" target="_blank">http://leftover.cn/2022/04/21/实习的第四天/</a>
+          <a href="http://leftover.cn/2022/07/01/解决刷新页面Vuex数据丢失问题/" title="解决刷新页面Vuex数据丢失问题" target="_blank">http://leftover.cn/2022/07/01/解决刷新页面Vuex数据丢失问题/</a>
         </li> -->
         
         <li>
@@ -427,18 +436,18 @@
   <div class="article-info article-info-index">
     
     
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/daily//" class="article-tag-list-link color1">daily</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
+    
 
     
 
@@ -488,7 +497,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/04/21/%E5%AE%9E%E4%B9%A0%E7%9A%84%E7%AC%AC%E5%9B%9B%E5%A4%A9/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -503,18 +512,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用宝塔部署vue+node 的项目
+          axios + applicationx-www-form-urlencode传参的问题
         
       </div>
     </a>
   
   
-    <a href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">阿里字体图标引用问题</div>
+    <a href="/2022/06/29/%E5%AE%9E%E4%B9%A0%E7%9A%84%E7%AC%AC%E4%BA%94%E5%A4%A9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实习的第五天</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -542,7 +551,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E7%9A%84%E7%8A%B6%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">近期的状况</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8A%E5%90%8E%E7%9A%84%E5%AE%89%E6%8E%92"><span class="toc-number">2.</span> <span class="toc-text">今后的安排</span></a></li></ol>
+                    目录溜走了~~
                     </div>
                 </span>
             </div>
@@ -726,15 +735,23 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -751,10 +768,6 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">nuxt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">

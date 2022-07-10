@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>Tag: 前端工程化 | 码上神域</title>
+  <title>git commit 规范 | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="leftover的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码上神域">
-<meta property="og:url" content="http://leftover.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/index.html">
+  <meta name="description" content="git commit 规范 规范git的commit可以帮助我们清楚地了解每一个commit的作用,其次,可以使用一些工具根据commit自动生成changelog,具体的方法可以参照这篇博客  一般一条commit包含  &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git commit 规范">
+<meta property="og:url" content="http://leftover.cn/2022/07/10/git%20commit%20%E8%A7%84%E8%8C%83/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="leftover的个人博客">
+<meta property="og:description" content="git commit 规范 规范git的commit可以帮助我们清楚地了解每一个commit的作用,其次,可以使用一些工具根据commit自动生成changelog,具体的方法可以参照这篇博客  一般一条commit包含  &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-10T13:40:39.000Z">
+<meta property="article:modified_time" content="2022-07-10T13:43:27.628Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
@@ -332,127 +334,118 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-git commit 规范" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/" class="archive-article-date">
-  最后更新:  <time datetime="2022-06-20T04:14:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/">自动生成Changelog</a>
-	
+    <h1 class="article-title" itemprop="name">
+      git commit 规范
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/2022/07/10/git%20commit%20%E8%A7%84%E8%8C%83/" class="archive-article-date">
+  最后更新:  <time datetime="2022-07-10T13:40:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
+</a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">239字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="git-commit-规范"><a href="#git-commit-规范" class="headerlink" title="git commit 规范"></a>git commit 规范</h1><blockquote>
+<p>规范git的commit可以帮助我们清楚地了解每一个commit的作用,其次,可以使用一些工具根据commit自动生成changelog,具体的方法可以参照这篇<a href="https://leftover.cn/2022/06/20/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Changelog/#more">博客</a></p>
+</blockquote>
+<p>一般一条commit包含 </p>
+<p><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</code></p>
+<span id="more"></span>
+
+<ol>
+<li>type一般包含以下这些</li>
+</ol>
+<ul>
+<li>feat: 新特性,新功能等等</li>
+<li>fix: 修复bug</li>
+<li>docs: 仅仅修改了文档，比如 README, CHANGELOG, CONTRIBUTE等等</li>
+<li>style: 仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑</li>
+<li>refactor: 代码重构，没有加新功能或者修复 bug</li>
+<li>perf: 优化相关，比如提升性能、体验</li>
+<li>test: 测试用例，包括单元测试、集成测试等</li>
+<li>chore: 改变构建流程、或者增加依赖库、工具等</li>
+<li>revert: 回滚版本</li>
+</ul>
+<ol start="2">
+<li>scope 表示此次修改作用的范围,这个不同的项目不一样</li>
+<li>subject 这个commit的描述  </li>
+</ol>
+<p>例如：</p>
+<p>feat:完成首页</p>
+<p>chore(release): v0.0.2</p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          leftover
+        </li>
+        <!-- <li>
+          <strong>本文链接：</strong>
+          <a href="http://leftover.cn/2022/07/10/git commit 规范/" title="git commit 规范" target="_blank">http://leftover.cn/2022/07/10/git commit 规范/</a>
+        </li> -->
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本文版权归leftover所有,如需转载清标明来源！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/28/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-28T07:17:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/28/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5/">代码规范最佳实践</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/commitizen+husky/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/commitizen+husky/">commitizen +husky 实现commit之前eslint检查代码和规范commit的提交</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -460,27 +453,148 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/07/10/git%20commit%20%E8%A7%84%E8%8C%83/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">axios + applicationx-www-form-urlencode传参的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-commit-%E8%A7%84%E8%8C%83"><span class="toc-number">1.</span> <span class="toc-text">git commit 规范</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+    <section id="comments" class="comments">
+      
+ <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+  clientID: '4fae767a71e73af8bc69',
+  clientSecret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475',
+  repo: 'blog.github.io',
+  owner: 'left0ver',
+  admin: 'left0ver',
+  id: location.href.slice(location.href.length-25),
+  distractionFreeMode: 'true',
+  labels: 'Comment'.split(',').filter(l => l) ,
+})
+gitalk.render('gitalk-container')
+
+</script>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -518,9 +632,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
