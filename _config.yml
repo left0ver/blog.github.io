@@ -106,6 +106,7 @@ theme_config:
     daily: /categories/daily
     git: /tags/git
     前端工程化: /tags/前端工程化
+    webpack: /tags/webpack
     部署: /tags/部署
     宝塔: /tags/宝塔
     Linux: /tags/Linux
