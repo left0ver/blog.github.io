@@ -14,7 +14,7 @@ next函数调用之后返回一个对象:`{value:xxx,done:xxx}`
 - value：是yield后面跟的值，如果后面是函数，则value则是函数的返回值
 - done：当done为tue时，则generator函数已经走完了，反之则没走完，可以继续调用next方法
 
-
+<!-- more -->
 
 ```javascript
 function *gen() {
