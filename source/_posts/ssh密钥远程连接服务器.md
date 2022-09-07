@@ -33,9 +33,9 @@ IdentityFile 指定私钥文件的位置
 
 ​      
 
-3. 最后将公钥里面的内容追加到 authorized_keys中  `cat [pub files name] >> authorized_keys`，这一步一定要有，不然公钥不生效
-
+4. 最后在服务器上将公钥里面的内容追加到 authorized_keys文件中，authorized_keys文件位于.ssh目录下面，如果没有的话则创建一个, `touch authorized_keys `  将公钥里面的内容追加到 authorized_keys文件中 `cat [pub files name] >> authorized_keys`，这一步一定要有，不然公钥不生效
 4. 你要配置不同是主机的ssh，在config文件里面新增即可
+5.  验证是否配置成功`ssh -T [用户名]@[服务器ip或者域名]`,例如 `ssh -T root@127.0.0.1`
 
 
 
