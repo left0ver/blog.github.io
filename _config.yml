@@ -115,6 +115,7 @@ theme_config:
     pyspark: /tags/pyspark
     quill: /tags/quill
     nuxt: /tags/nuxt
+    interesting: /tags/interesting
 # deploy:
 #   type: git
 #   repository: root@112.74.50.60:/home/git/blog.git   #用户名@服务器Ip:git仓库位置
