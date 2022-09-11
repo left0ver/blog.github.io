@@ -116,6 +116,7 @@ theme_config:
     quill: /tags/quill
     nuxt: /tags/nuxt
     interesting: /tags/interesting
+    mac: /tags/mac
 # deploy:
 #   type: git
 #   repository: root@112.74.50.60:/home/git/blog.git   #用户名@服务器Ip:git仓库位置
