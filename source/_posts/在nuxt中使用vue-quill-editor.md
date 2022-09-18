@@ -2,8 +2,6 @@
 title: 在nuxt中使用vue-quill-editor 出现document is not defined
 date: 2022-04-21 17:42:01
 tags:
-  - quill
-  - nuxt
   - vue
 ---
 
@@ -26,7 +24,7 @@ Vue.use(VueQuillEditor);
 
 <!-- more -->
 
-2. 然后在nuxt.config.js文件中
+1. 然后在nuxt.config.js文件中
 
    加入这几行代码
 

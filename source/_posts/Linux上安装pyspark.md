@@ -3,7 +3,6 @@ title: Linux上安装pyspark
 date: 2022-04-21 17:34:53
 tags:
   - Linux
-  - pyspark
 ---
 
 ```java

@@ -108,13 +108,9 @@ theme_config:
     前端工程化: /tags/前端工程化
     webpack: /tags/webpack
     部署: /tags/部署
-    宝塔: /tags/宝塔
     Linux: /tags/Linux
     hexo: /tags/hexo
     字体图标: /tags/字体图标
-    pyspark: /tags/pyspark
-    quill: /tags/quill
-    nuxt: /tags/nuxt
     interesting: /tags/interesting
     mac: /tags/mac
 # deploy:
