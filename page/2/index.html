@@ -115,83 +115,67 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color3" href="/tags/vue"> vue</a>
+            <a class="color11" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/react"> react</a>
+            <a class="color7" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/javaScript"> javaScript</a>
+            <a class="color2" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/html"> html</a>
+            <a class="color11" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/css"> css</a>
+            <a class="color11" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color7" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
-            <a class="color11" href="/categories/daily"> daily</a>
+            <a class="color8" href="/categories/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/git"> git</a>
+            <a class="color6" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color10" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/webpack"> webpack</a>
+            <a class="color6" href="/tags/webpack"> webpack</a>
           </div>
           
           <div>
-            <a class="color1" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color11" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E5%AE%9D%E5%A1%94"> 宝塔</a>
+            <a class="color10" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/Linux"> Linux</a>
+            <a class="color7" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/hexo"> hexo</a>
+            <a class="color5" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color8" href="/tags/interesting"> interesting</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/pyspark"> pyspark</a>
-          </div>
-          
-          <div>
-            <a class="color2" href="/tags/quill"> quill</a>
-          </div>
-          
-          <div>
-            <a class="color6" href="/tags/nuxt"> nuxt</a>
-          </div>
-          
-          <div>
-            <a class="color5" href="/tags/interesting"> interesting</a>
-          </div>
-          
-          <div>
-            <a class="color10" href="/tags/mac"> mac</a>
+            <a class="color11" href="/tags/mac"> mac</a>
           </div>
           
       </div>
@@ -349,6 +333,98 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-axios传参" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/">axios + applicationx-www-form-urlencode传参的问题</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/" class="archive-article-date">
+  最后更新:  <time datetime="2022-07-01T06:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li>使用axios的时候，在post请求的body传递数据的时候，axios会默认转换成json字符串的格式传递给后端</li>
+<li>但有时候后端接收的格式是<code>application/x-www-form-urlencode</code>,axios默认的格式是<code>application/json</code> ,你可以通过设置headers来设置传递的数据类型<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">headers<span class="punctuation">:</span> <span class="punctuation">&#123;</span> &#x27;Content-Type&#x27;<span class="punctuation">:</span> &#x27;application/x-www-form-urlencoded&#x27; <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+但是这时候axios依然会将你body里的数据转换成json字符串的形式,一般我们可以使用<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/qs">qs</a>库来进行转换,如下：</li>
+</ul>
+    
+    <a class="article-more-a" href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/#more">查看全文 >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-解决刷新页面Vuex数据丢失问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1150,95 +1226,6 @@
 
 
   
-    <article id="post-js垃圾回收机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">javascript的垃圾回收机制</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T10:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js垃圾回收机制"><a href="#js垃圾回收机制" class="headerlink" title="js垃圾回收机制"></a>js垃圾回收机制</h1><ul>
-<li><p>在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。</p>
-</li>
-<li><p>在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏</p>
-</li>
-<li><p>现在大部分的浏览器的引擎都是使用的标记的算法（<code>mark-and-sweep</code>）</p>
-    
-    <a class="article-more-a" href="/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/#more">查看全文 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&lt; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &gt; </a>
@@ -1373,15 +1360,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pyspark</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1389,15 +1372,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1409,23 +1384,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">interesting</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">宝塔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">quill</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">nuxt</a>
               </li>
              
               <li class="article-tag-list-item">
