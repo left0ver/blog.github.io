@@ -2,7 +2,7 @@
 title: ssh密钥远程连接服务器
 date: 2022-04-27 14:54:21
 tags:
-  - linux
+  - Linux
 ---
 
 
@@ -25,17 +25,17 @@ tags:
       
       ```
 
-Host：表示别名
+Host：表示别名，一般填写域名或者ip即可
 HostName:服务器的IP或者域名
 User:登录的用户
 Port:指定端口号（默认是22）
-IdentityFile 指定私钥文件的位置
+IdentityFile 指定私钥文件的位置,例如 ~/.ssh/id_ed25519
 
 ​      
 
 4. 最后在服务器上将公钥里面的内容追加到 authorized_keys文件中，authorized_keys文件位于.ssh目录下面，如果没有的话则创建一个, `touch authorized_keys `  将公钥里面的内容追加到 authorized_keys文件中 `cat [pub files name] >> authorized_keys`，这一步一定要有，不然公钥不生效
-4. 你要配置不同是主机的ssh，在config文件里面新增即可
-5.  验证是否配置成功`ssh -T [用户名]@[服务器ip或者域名]`,例如 `ssh -T root@127.0.0.1`
+5. 你要配置不同是主机的ssh，在config文件里面新增即可
+6.  验证是否配置成功`ssh -T [用户名]@[服务器ip或者域名]`,例如 `ssh -T root@127.0.0.1`
 
 
 
