@@ -6,7 +6,9 @@ tags:
   - html
 ---
 
+![leftover](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/20221009124833-2022-10-09.png)
 
+![leftover](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/20221009124820-2022-10-09.png)
 # Blob
 
 `Blob` 对象表示一个不可变、原始数据的类文件对象。它的数据可以按文本或二进制的格式进行读取，也可以转换成 [`ReadableStream`](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream) 来用于数据操作。
