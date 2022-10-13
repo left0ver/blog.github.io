@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>解决刷新页面Vuex数据丢失问题 | 码上神域</title>
+  <title>node+react本地使用https进行开发 | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化  自己实现    我们可以在刷新页面之前将数据存储到 sessionStorage 、 localStorage、cookie 里面，然后我们进入页面之前从 sessionStorage 、 localStorage 、 cookie 里面读取数据保">
+  <meta name="description" content="准备好证书对于本地来说，可以使用mkcert来生成证书 安装：  mac： 12brew install mkcertbrew install nss # if you use Firefox windows 123456#Chocolateychoco install mkcert# or use Scoopscoop bucket add extrasscoop install mkcert">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决刷新页面Vuex数据丢失问题">
-<meta property="og:url" content="http://leftover.cn/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="node+react本地使用https进行开发">
+<meta property="og:url" content="http://leftover.cn/2022/10/13/node+react%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8https%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化  自己实现    我们可以在刷新页面之前将数据存储到 sessionStorage 、 localStorage、cookie 里面，然后我们进入页面之前从 sessionStorage 、 localStorage 、 cookie 里面读取数据保">
+<meta property="og:description" content="准备好证书对于本地来说，可以使用mkcert来生成证书 安装：  mac： 12brew install mkcertbrew install nss # if you use Firefox windows 123456#Chocolateychoco install mkcert# or use Scoopscoop bucket add extrasscoop install mkcert">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-01T06:04:28.000Z">
-<meta property="article:modified_time" content="2022-09-07T15:41:59.631Z">
+<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202210132153926.png">
+<meta property="article:published_time" content="2022-10-13T14:08:05.000Z">
+<meta property="article:modified_time" content="2022-10-13T14:10:37.129Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202210132153926.png">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
   
@@ -338,14 +341,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-解决刷新页面Vuex数据丢失问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-node+react本地使用https进行开发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      解决刷新页面Vuex数据丢失问题
+      node+react本地使用https进行开发
     </h1>
   
 
@@ -357,8 +360,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  最后更新:  <time datetime="2022-07-01T06:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
+<a href="/2022/10/13/node+react%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8https%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  最后更新:  <time datetime="2022-10-13T14:08:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-13</time>
 </a>
 
   
@@ -371,7 +374,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">348字</span>
+      <span class="post-count">513字</span>
     </span>
   </span>
 
@@ -380,7 +383,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -391,24 +394,32 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>我们使用 Vue 和 Vuex 的时候，当我们刷新页面的时候， Vuex 里的数据就会恢复为初始状态，要想解决这个问题，实现 Vuex 数据的持久化</p>
-<ol>
-<li>自己实现</li>
-</ol>
+    <h1 id="准备好证书"><a href="#准备好证书" class="headerlink" title="准备好证书"></a>准备好证书</h1><p>对于本地来说，可以使用<a target="_blank" rel="noopener" href="https://github.com/FiloSottile/mkcert">mkcert</a>来生成证书</p>
+<p>安装：</p>
 <ul>
-<li><p> 我们可以在刷新页面之前将数据存储到 <code>sessionStorage</code> 、 <code>localStorage</code>、<code>cookie</code> 里面，然后我们进入页面之前从 <code>sessionStorage</code> 、 <code>localStorage</code> 、 <code>cookie</code> 里面读取数据保存到 Vuex 里即可，具体的代码如下：</p>
-</li>
-<li><p> ,如果用户退出浏览器，则 <code>sessionStorage</code> 里面的数据就消失了，而 <code>localStorage</code> 里的数据除非你自己手动清除，否则一直存在，而 cookie 一般是有时效性的，而且    cookie 里面可以存储的数据大小有限，最多只能储存 <code>4KB</code> 的数据</p>
-</li>
-<li><p>个人建议储存在 <code>sessionStorage</code> 里面会更好</p>
-</li>
+<li><p>mac：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install mkcert</span><br><span class="line">brew install nss # if you use Firefox</span><br></pre></td></tr></table></figure></li>
+<li><p>windows</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Chocolatey</span></span><br><span class="line">choco install mkcert</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">or use Scoop</span></span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop install mkcert</span><br></pre></td></tr></table></figure></li>
 </ul>
+<p>生成证书</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/.cert</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">生成证书</span></span><br><span class="line">mkcert -key-file ~/.cert/key.pem -cert-file ~/.cert/cert.pem &quot;localhost&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">让系统信任生成的证书，只有初次生成证书时需要运行这个命令，后续通过 mkcert -key-file 生成的证书会自动被系统信任</span></span><br><span class="line">mkcert -install</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  APP.vue</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="title function_">created</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> oldStore = sessionStorage.<span class="title function_">getItem</span>(<span class="string">&#x27;store&#x27;</span>)</span><br><span class="line">    <span class="comment">// 第一次进入页面时为null，后面如果刷新页面将会有值，则会替换Vuex里面的数据</span></span><br><span class="line">    <span class="keyword">if</span> (oldStore !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">replaceState</span>(</span><br><span class="line">        <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>, <span class="title class_">JSON</span>.<span class="title function_">parse</span>(oldStore))</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 监听页面刷新，将store里面的数据保存到sessionStorage</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;beforeunload&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      sessionStorage.<span class="title function_">setItem</span>(<span class="string">&#x27;store&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(<span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>使用插件</li>
-</ol>
-<p>  你可以使用 <a target="_blank" rel="noopener" href="https://github.com/robinvdvleuten/vuex-persistedstate">vuex-persistedstate</a> 这个插件，本质的原理也是使用了本地的储存，也可以分别存储在 cookie , sessionStorage , localStorage 里面</p>
+<h1 id="express启动https服务"><a href="#express启动https服务" class="headerlink" title="express启动https服务"></a>express启动https服务</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> httpsOption = &#123;</span><br><span class="line">  <span class="comment">//证书地址</span></span><br><span class="line">    <span class="attr">key</span>: fs.<span class="title function_">readFileSync</span>(path.<span class="title function_">join</span>(os.<span class="title function_">homedir</span>(), <span class="string">&#x27;.cert/key.pem&#x27;</span>)),</span><br><span class="line">    <span class="attr">cert</span>: fs.<span class="title function_">readFileSync</span>(path.<span class="title function_">join</span>(os.<span class="title function_">homedir</span>(), <span class="string">&#x27;.cert/cert.pem&#x27;</span>),</span><br><span class="line">  &#125;</span><br><span class="line">  https.<span class="title function_">createServer</span>(httpsOption, app).<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`server start and listening on port <span class="subst">$&#123;Port&#125;</span>`</span>)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="react启动https"><a href="#react启动https" class="headerlink" title="react启动https"></a>react启动https</h1><p>如果你是通过cra创建的项目，只需添加几个环境变量即可，将启动命令修改成如下所示，即可在本地服务启动https</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;script&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;HTTPS=true SSL_CRT_FILE=$HOME/.cert/cert.pem SSL_KEY_FILE=$HOME/.cert/key.pem react-scripts start&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后你的网络请求全部改成https即可</p>
+<h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><p>现在线上环境经常会使用反向代理，为了本地和线上环境最大限度地保持一致，本地可以使用[caddy](caddy reverse-proxy –from localhost –to localhost:3000)实现反向代理,mac下运行<code>brew install caddy</code>即可下载，其他系统可以自行查阅文档，这里附上一个中文的<a target="_blank" rel="noopener" href="https://caddy2.dengxiaolong.com/docs/">文档</a>(非官方)。</p>
+<p>只需要在项目启动之后运行下面命令即可，这条命令是将localhost代理到<a href="https://localhost:3000，我们打开网页输入localhost即可访问服务。">https://localhost:3000，我们打开网页输入localhost即可访问服务。</a></p>
+<p>Caddy 会自动生成证书，获取系统信任，无需另行生成证书，也无需修改项目的启动服务。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy reverse-proxy --from localhost --to https://localhost:3000</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202210132153926.png" alt="image-20221013215353805"></p>
+<h1 id="线上环境"><a href="#线上环境" class="headerlink" title="线上环境"></a>线上环境</h1><p>针对线上环境，只需要将证书的地址什么的改一下，然后前端使用https发送请求，配置对应的反向代理即可</p>
 
     
 
@@ -423,7 +434,7 @@
         </li>
         <!-- <li>
           <strong>本文链接：</strong>
-          <a href="http://leftover.cn/2022/07/01/解决刷新页面Vuex数据丢失问题/" title="解决刷新页面Vuex数据丢失问题" target="_blank">http://leftover.cn/2022/07/01/解决刷新页面Vuex数据丢失问题/</a>
+          <a href="http://leftover.cn/2022/10/13/node+react本地使用https进行开发/" title="node+react本地使用https进行开发" target="_blank">http://leftover.cn/2022/10/13/node+react本地使用https进行开发/</a>
         </li> -->
         
         <li>
@@ -445,7 +456,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -501,7 +516,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/07/01/%E8%A7%A3%E5%86%B3%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2Vuex%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2022/10/13/node+react%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8https%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -516,18 +531,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/01/axios%E4%BC%A0%E5%8F%82/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          axios + applicationx-www-form-urlencode传参的问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/06/29/%E5%AE%9E%E4%B9%A0%E7%9A%84%E7%AC%AC%E4%BA%94%E5%A4%A9/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实习的第五天</div>
+    <a href="/2022/09/26/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">推荐好文</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -555,7 +561,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录溜走了~~
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%A5%BD%E8%AF%81%E4%B9%A6"><span class="toc-number">1.</span> <span class="toc-text">准备好证书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#express%E5%90%AF%E5%8A%A8https%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.</span> <span class="toc-text">express启动https服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#react%E5%90%AF%E5%8A%A8https"><span class="toc-number">3.</span> <span class="toc-text">react启动https</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">反向代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E4%B8%8A%E7%8E%AF%E5%A2%83"><span class="toc-number">5.</span> <span class="toc-text">线上环境</span></a></li></ol>
                     </div>
                 </span>
             </div>
