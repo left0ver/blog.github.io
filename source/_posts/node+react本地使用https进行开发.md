@@ -73,7 +73,7 @@ const httpsOption = {
 
 # 反向代理
 
-现在线上环境经常会使用反向代理，为了本地和线上环境最大限度地保持一致，本地可以使用[caddy](caddy reverse-proxy --from localhost --to localhost:3000)实现反向代理,mac下运行`brew install caddy`即可下载，其他系统可以自行查阅文档，这里附上一个中文的[文档](https://caddy2.dengxiaolong.com/docs/)(非官方)。
+现在线上环境经常会使用反向代理，为了本地和线上环境最大限度地保持一致，本地可以使用[caddy](https://caddyserver.com/docs/install)实现反向代理,mac下运行`brew install caddy`即可下载，其他系统可以自行查阅文档，这里附上一个中文的[文档](https://caddy2.dengxiaolong.com/docs/)(非官方)。
 
 只需要在项目启动之后运行下面命令即可，这条命令是将localhost代理到https://localhost:3000，我们打开网页输入localhost即可访问服务。
 
