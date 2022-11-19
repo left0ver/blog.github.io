@@ -115,31 +115,31 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color4" href="/tags/vue"> vue</a>
+            <a class="color9" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color9" href="/tags/react"> react</a>
+            <a class="color3" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/javaScript"> javaScript</a>
+            <a class="color2" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/node"> node</a>
+            <a class="color5" href="/tags/node"> node</a>
           </div>
           
           <div>
-            <a class="color1" href="/tags/html"> html</a>
+            <a class="color5" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/css"> css</a>
+            <a class="color5" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color11" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
@@ -147,43 +147,43 @@
           </div>
           
           <div>
-            <a class="color7" href="/categories/daily"> daily</a>
+            <a class="color8" href="/categories/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/git"> git</a>
+            <a class="color1" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color5" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/webpack"> webpack</a>
+            <a class="color3" href="/tags/webpack"> webpack</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color4" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/Linux"> Linux</a>
+            <a class="color8" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/hexo"> hexo</a>
+            <a class="color11" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color11" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color3" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/interesting"> interesting</a>
+            <a class="color4" href="/tags/interesting"> interesting</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/mac"> mac</a>
+            <a class="color5" href="/tags/mac"> mac</a>
           </div>
           
       </div>
@@ -341,6 +341,92 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-一些有关Linux的有用的小笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/11/19/%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3Linux%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E7%AC%94%E8%AE%B0/">一些有关Linux的有用的小笔记</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/11/19/%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3Linux%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  最后更新:  <time datetime="2022-11-19T13:24:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="如何更换apt的源"><a href="#如何更换apt的源" class="headerlink" title="如何更换apt的源"></a>如何更换apt的源</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt; /etc/apt/sources.list</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse12345678910 </span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2022/11/19/%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3Linux%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E7%AC%94%E8%AE%B0/#more">查看全文 >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-使用Jenkins 进行CICD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -578,11 +664,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -1154,58 +1240,6 @@
 
 
   
-    <article id="post-vscode+picgo插件上传图片至oss" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="vscode-picgo插件上传图片至oss"><a href="#vscode-picgo插件上传图片至oss" class="headerlink" title="vscode+picgo插件上传图片至oss"></a>vscode+picgo插件上传图片至oss</h1><p>以前我是使用typora写markdown的,typora确实香，所见即所得的特性对新手比较友好，也可以配合pcigo，直接粘贴图片即可上传到图床,但是typora开始收费了,虽然可以下载以前不用收费的历史版本，但是用了一段时间之后也用不了,这之后我开始使用vscode来写markdown,配合markdown all in one 插件,体验还是不错的（不得不说vscode是真滴牛）</p>
-<ul>
-<li>写作体验好了，但是不能像typora一样自动上传图片到图床,好在vscode里面也有这么一个插件叫picgo ,可以帮助你自动上传图片至各大图床。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2022/09/07/vscode+picgo%E6%8F%92%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3oss/#more">查看全文 >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &gt; </a>
@@ -1332,15 +1366,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1360,7 +1394,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1368,11 +1402,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1380,7 +1410,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1389,10 +1427,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">daily</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
