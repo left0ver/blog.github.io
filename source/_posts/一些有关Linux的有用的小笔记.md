@@ -34,3 +34,7 @@ rm -f /etc/localtime
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
+# mac 如何给某个app添加权限
+有时候可能某个app没有请求权限，但是这个app需要用到这个权限，这时候没权限就导致用不了，需要手动给权限，这时候就需要在命令行里面手动给某个app添加权限
+https://juejin.cn/post/7033792167362035749
+https://blog.csdn.net/cneducation/article/details/111403294
