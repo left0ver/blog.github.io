@@ -115,6 +115,7 @@ theme_config:
     字体图标: /tags/字体图标
     interesting: /tags/interesting
     mac: /tags/mac
+    npm: /tags/npm
 # deploy:
 #   type: git
 #   repository: root@112.74.50.60:/home/git/blog.git   #用户名@服务器Ip:git仓库位置
