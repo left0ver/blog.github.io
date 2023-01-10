@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leftover.cn">
-  <title>Archives: 2022 | 码上神域</title>
+  <title>如何开发一个现代的npm包 | 码上神域</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="leftover的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码上神域">
-<meta property="og:url" content="http://leftover.cn/archives/2022/page/4/index.html">
+  <meta name="description" content="模块化 IIFE其实就是一个立即执行函数，最开始是使用这个来进行模块化的，隔离变量作用域  AMD（Asynchronous Module Definition异步模块定义）  UMD (Universal Module Definition,也就是通用模块定义),UMD是AMD+cjs的兼容版，在AMD和cjs的项目中，都可以引入UMD模块  CJS 是nodejs采用的模块化标准，使用requ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何开发一个现代的npm包">
+<meta property="og:url" content="http://leftover.cn/2023/01/11/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E7%9A%84npm%E5%8C%85/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="leftover的个人博客">
+<meta property="og:description" content="模块化 IIFE其实就是一个立即执行函数，最开始是使用这个来进行模块化的，隔离变量作用域  AMD（Asynchronous Module Definition异步模块定义）  UMD (Universal Module Definition,也就是通用模块定义),UMD是AMD+cjs的兼容版，在AMD和cjs的项目中，都可以引入UMD模块  CJS 是nodejs采用的模块化标准，使用requ">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-10T16:18:54.000Z">
+<meta property="article:modified_time" content="2023-01-10T16:20:53.867Z">
 <meta property="article:author" content="leftover">
-<meta property="article:tag" content="leftover-blog,leftover博客,张文超博客,leftover,博客">
+<meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
@@ -340,116 +342,315 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-开发一个现代的npm包" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%83%A8%E7%BD%B2vue+node%20%E7%9A%84%E9%A1%B9%E7%9B%AE/">使用宝塔部署vue+node 的项目</a>
-	
+    <h1 class="article-title" itemprop="name">
+      如何开发一个现代的npm包
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/01/11/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E7%9A%84npm%E5%8C%85/" class="archive-article-date">
+  最后更新:  <time datetime="2023-01-10T16:18:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-11</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.3k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><ol>
+<li><p>IIFE其实就是一个立即执行函数，最开始是使用这个来进行模块化的，隔离变量作用域</p>
+</li>
+<li><p>AMD（Asynchronous Module Definition异步模块定义）</p>
+</li>
+<li><p>UMD (<em>Universal Module Definition</em>,也就是通用模块定义),UMD是AMD+cjs的兼容版，在AMD和cjs的项目中，都可以引入UMD模块</p>
+</li>
+<li><p>CJS 是nodejs采用的模块化标准，使用require引入模块，exports 或 modules.exports来导出模块</p>
+</li>
+<li><p>ESM 是es6提出的模块化方案，是当前比较流行的模块化方案，在node.js中默认是使用cjs的模块化方案，可以在package.json中设置  “type”: “module”来标记为esm模块,使用import导入模块，export导出模块</p>
+</li>
+</ol>
+<span id="more"></span>
+<h1 id="打包成cjs和esm模块"><a href="#打包成cjs和esm模块" class="headerlink" title="打包成cjs和esm模块"></a>打包成cjs和esm模块</h1><h1 id="tsc"><a href="#tsc" class="headerlink" title="tsc"></a>tsc</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tsconfig.base.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;strict&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;esModuleInterop&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;forceConsistentCasingInFileNames&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;skipLibCheck&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;checkJs&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;allowJs&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;declaration&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;declarationMap&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;allowSyntheticDefaultImports&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;files&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;src/**/*.ts&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tsconfig.cjs.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;extends&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./tsconfig.base.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lib&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ES6&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DOM&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ES2016&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;module&quot;</span><span class="punctuation">:</span> <span class="string">&quot;CommonJS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Node&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;outDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./lib/cjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;declarationDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./lib/cjs/types&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tsconfig.esm.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;extends&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./tsconfig.base.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lib&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ES2022&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DOM&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ES2022&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;module&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ESNext&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NodeNext&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;outDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./lib/esm&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;declarationDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./lib/esm/types&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后我们可以运行<code>tsc -p ./tsconfig.esm.json</code> ,<code>tsc -p ./tsconfig.cjs.json</code> 分别打包esm和cjs的包</p>
+<p>之后我们可以在<code>package.json</code>里面配置script,</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;script&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;clean&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rm -rf ./lib/*&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run clean &amp;&amp; npm run build:esm &amp;&amp; npm run build:cjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;build:cjs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc -p ./tsconfig.cjs.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;build:esm&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tsc -p ./tsconfig.esm.json &amp;&amp; mv ./lib/esm/index.js ./lib/esm/index.mjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prepublishOnly&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>prepublishOnly</code>脚本会在你每次运行<code>npm publish</code>之前自动调用</p>
+<h1 id="tsup"><a href="#tsup" class="headerlink" title="tsup"></a>tsup</h1><ul>
+<li><p>一个打包工具，开箱即用，对新手友好</p>
+<p>例如：我们需要打包出cjs和esm的包</p>
+<p><code>tsup index.ts --format cjs,esm,iife  -d lib --dts --clean --global-name P -d lib</code></p>
+<p>  一行命令即可打包出对应的代码，相比tsc来说，更加地简单，不需要像tsc那样配置多个配置文件，但是这两个工具都只能打包根目录下的模块，不能打包子模块</p>
+</li>
+</ul>
+<h1 id="unbuild"><a href="#unbuild" class="headerlink" title="unbuild"></a>unbuild</h1><p><code>unbuild</code>和<code>tsup</code> 类似,相对tsup来说,unbuild 会更复杂一些,需要配置对应的配置文件,但他可以打包一些子模块,相比tsup则更灵活</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineBuildConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;unbuild&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineBuildConfig</span>(&#123;</span><br><span class="line">  <span class="attr">entries</span>: [</span><br><span class="line">    <span class="string">&#x27;./src/index&#x27;</span>,</span><br><span class="line">    <span class="comment">//打包子模块</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">builder</span>: <span class="string">&#x27;rollup&#x27;</span>,</span><br><span class="line">      <span class="attr">input</span>: <span class="string">&#x27;./src/package/components/&#x27;</span>,</span><br><span class="line">      <span class="attr">outDir</span>: <span class="string">&#x27;./build/components&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">rollup</span>: &#123;</span><br><span class="line">    <span class="attr">emitCJS</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">inlineDependencies</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">clean</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">declaration</span>: <span class="literal">true</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h1><ol>
+<li><p>file：发布的时候哪些文件需要上传到npm</p>
+</li>
+<li><p>main: 项目的入口文件,在浏览器环境和node都可以使用</p>
+</li>
+<li><p>browser： 浏览器端的入口文件，只针对浏览器环境</p>
+</li>
+<li><p>module: 指定 ES 模块的入口文件，这就是 module 字段的作用</p>
+<blockquote>
+<p>module和browser的优先级高于main</p>
+</blockquote>
+</li>
+<li><p>exports: node 在 14.13 支持在 package.json 里定义 exports 字段，拥有了条件导出的功能。exports 字段可以配置不同环境对应的模块入口文件，并且当它存在时，它的优先级最高，exportsl</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;exports&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;.&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.d.ts&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;require&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;import&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./dist/index.mjs&quot;</span></span><br><span class="line">    <span class="attr">&quot;browser&quot;</span><span class="punctuation">:</span><span class="string">&quot;./dist/index.global.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"> <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>engines</p>
+<p>平常有些项目对node版本和包管理器的版本有要求，我们可以通过设置engines来指定版本号，如果版本号不符合，用户下载依赖的时候则会被终止，会提示对应的报错信息</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;engines&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;node&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=16 &lt;18&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>os</p>
+<p>有些npm包可能只能在Linux上运行，不支持windows操作系统，我们可以通过os字段来设置支持的操作系统</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;linux&quot;</span><span class="punctuation">,</span><span class="string">&quot;darwin&quot;</span><span class="punctuation">]</span></span><br><span class="line">	<span class="comment">// or </span></span><br><span class="line">  <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;!win32&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>bin</p>
+<p>有时候我们有一些可执行文件，下载npm包的时候希望下载到PATH里，这时候我们可以通过bin字段来指定，这时候我们全局下载的时候会在/usr/local/bin目录下面创建一个软链接，指向我们指定的那个文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;bin&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;formula&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./bin/yqn.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bin/yqn.js</span></span><br><span class="line">#!<span class="regexp">/usr/</span>bin/env node</span><br></pre></td></tr></table></figure></li>
+<li><p>types</p>
+<p>使用types来指定类型的入口文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./lib/index.d.ts&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>对于一个正规的npm包来说，单元测试是非常有必要的</p>
+<p>我们可以使用jest来编写测试代码</p>
+<p>然后package.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;script&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span><span class="string">&quot;jest&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>CI</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Tests</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">main</span> ]</span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">main</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">strategy:</span></span><br><span class="line">      <span class="attr">matrix:</span></span><br><span class="line">        <span class="attr">node-version:</span> [<span class="number">12.</span><span class="string">x</span>, <span class="number">14.</span><span class="string">x</span>, <span class="number">16.</span><span class="string">x</span>, <span class="number">18.</span><span class="string">x</span>]</span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="string">$&#123;&#123;</span> <span class="string">matrix.node-version</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">$&#123;&#123;</span> <span class="string">matrix.node-version</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">ci</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">test</span></span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          leftover
+        </li>
+        <!-- <li>
+          <strong>本文链接：</strong>
+          <a href="http://leftover.cn/2023/01/11/开发一个现代的npm包/" title="如何开发一个现代的npm包" target="_blank">http://leftover.cn/2023/01/11/开发一个现代的npm包/</a>
+        </li> -->
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本文版权归leftover所有,如需转载清标明来源！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://leftover.cn/2023/01/11/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E7%9A%84npm%E5%8C%85/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  最后更新:  <time datetime="2022-04-21T09:24:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-10</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/19/%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3Linux%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一些有关Linux的有用的小笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/21/%E9%98%BF%E9%87%8C%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">阿里字体图标引用问题</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">字体图标</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E6%88%90cjs%E5%92%8Cesm%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">打包成cjs和esm模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tsc"><span class="toc-number">3.</span> <span class="toc-text">tsc</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tsup"><span class="toc-number">4.</span> <span class="toc-text">tsup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unbuild"><span class="toc-number">5.</span> <span class="toc-text">unbuild</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#package-json"><span class="toc-number">6.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">7.</span> <span class="toc-text">测试</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+        
+    </div>
+</aside>
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/page/3/">&lt; Prev</a><a class="page-number" href="/archives/2022/">1</a><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+
+
   
+    <section id="comments" class="comments">
+      
+ <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+  clientID: '4fae767a71e73af8bc69',
+  clientSecret: 'a2c88eae27e417fa5fdb4ef1dc28fcb90d7dd475',
+  repo: 'blog.github.io',
+  owner: 'left0ver',
+  admin: 'left0ver',
+  id: location.href.slice(location.href.length-25),
+  distractionFreeMode: 'true',
+  labels: 'Comment'.split(',').filter(l => l) ,
+})
+gitalk.render('gitalk-container')
+
+</script>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -487,8 +688,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
