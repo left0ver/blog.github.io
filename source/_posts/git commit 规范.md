@@ -27,9 +27,11 @@ tags:
 - test: 测试用例，包括单元测试、集成测试等
 - chore: 改变构建流程、或者增加依赖库、工具等
 - revert: 回滚版本
+- build: 构建工具相关,如 webpack ,vite 等构建相关的改动
+- ci: 与CI , workflow 有关的改动
 
-2. scope 表示此次修改作用的范围,这个不同的项目不一样
-3. subject 这个commit的描述  
+1. scope 表示此次修改作用的范围,这个不同的项目不一样
+2. subject 这个commit的描述  
 
 例如：
 
