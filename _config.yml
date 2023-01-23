@@ -45,7 +45,7 @@ highlight:
   auto_detect: true
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -105,7 +105,7 @@ theme_config:
     css: /tags/css
     哆啦A梦的口袋: /tags/哆啦A梦的口袋
     推荐好文: /tags/推荐好文
-    daily: /categories/daily
+    daily: /tags/daily
     git: /tags/git
     前端工程化: /tags/前端工程化
     webpack: /tags/webpack

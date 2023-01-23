@@ -1,17 +1,15 @@
 ﻿# Header-菜单
 menu:
   主页: /
-  技术笔记: https://zhousiwei.gitee.io/ibooks/
   标签: /tags/
-  分类: /categories/
-
+  GitHub: https://github.com/left0ver
 # subNav-子导航
 subNav:
   - github: "https://github.com/left0ver" # (支持设置多个)
   - blog: "https://leftover.cn"
   - csdn: "https://blog.csdn.net/m0_52537576?type=blog"
   # - rss: "#"
-  # - zhihu: "#"
+  - zhihu: "https://www.zhihu.com/people/left0ver"
   - qq: "img/qq.jpg"
   # - weixin: "img/weixin_.png"
   - bilibili: "https://space.bilibili.com/646733181"
