@@ -1,4 +1,4 @@
-﻿---
+---
 title: Linux上安装pyspark
 date: 2022-04-21 17:34:53
 tags:
@@ -11,7 +11,7 @@ tags:
 提取码：left
 ```
 <!-- more -->
-![image-20220226101103434](https://img-blog.csdnimg.cn/img_convert/9ffb84007adf953ddfbc40b0da32ab86.png)
+![image-20220226101103434](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751333.png)
 
 ```java
 mkdir /opt/jdk
@@ -41,9 +41,9 @@ source ~/.bashrc
 spark-shell
 ```
 
-![image-20220226091258772](https://img-blog.csdnimg.cn/img_convert/466d3e68afac300d55fd2954c2dabc4e.png)
+![image-20220226091258772](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751799.png)
 
-![image-20220226091146303](https://img-blog.csdnimg.cn/img_convert/2bd7a433bafcd2298ab351fa09380aba.png)
+![image-20220226091146303](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751321.png)
 
 ```java
 mkdir /opt/python3
@@ -53,7 +53,7 @@ yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel r
 
 **安装完了会出现如图所示的complete**
 
-![image-20220226092246667](https://img-blog.csdnimg.cn/img_convert/3222f60cc93461efac6569af515a8127.png)
+![image-20220226092246667](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751373.png)
 
 ```java
 cd /opt/python3/Python-3.6.5
@@ -63,7 +63,7 @@ make && makeinstall
 //等待几分钟，出现下图
 ```
 
-![image-20220226092813454](https://img-blog.csdnimg.cn/img_convert/f109ce5e30b426b1fd5c831d0d070d51.png)
+![image-20220226092813454](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751428.png)
 
 ```java
 //建立软链接
@@ -72,7 +72,7 @@ ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
  //输入python3，出现下图所示
 ```
 
-![](https://img-blog.csdnimg.cn/img_convert/3b4472b102fe5e60c789f3a78c8d7d34.png)
+![](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751379.png)
 
 ```java
 
@@ -83,7 +83,7 @@ export PYSPARK_PYTHON=python3
 source ~/.bashrc
 ```
 
-![image-20220226100003281](https://img-blog.csdnimg.cn/img_convert/4706d98ca46fcb30a6cfea9052764731.png)
+![image-20220226100003281](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751127.png)
 
 ```java
 pyspark
@@ -92,7 +92,7 @@ pyspark
 
 
 
-![image-20220226095411859](https://img-blog.csdnimg.cn/img_convert/7977892c7f1608d2eca62002a56177e8.png)
+![image-20220226095411859](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181751844.png)
 **动动小手，点个赞！**
 
 

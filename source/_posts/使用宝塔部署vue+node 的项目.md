@@ -1,4 +1,4 @@
-﻿---
+---
 title: 使用宝塔部署vue+node 的项目
 date: 2022-04-21 17:30:21
 tags:
@@ -14,7 +14,7 @@ tags:
 
    ​       
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/be787e1545cc4b52bcfd562862900646.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGVmdDB2ZXI=,size_20,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181749819.png)
 <!-- more -->
 
  - 这里数据库的ip地址改成0.0.0.0 
@@ -22,7 +22,7 @@ tags:
  - 密码就填数据库登陆时的密码
  - 最后一个database就填你数据库的名称       
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e91c83cf7f8542329fadfcac602684ab.png)
+![在这里插入图片描述](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181750142.png)
 这里我后端用的是express框架，这里的监听的ip地址是0.0.0.0，端口号根据你的项目的实际端口号来填
 
 把这些东西修改好了之后就可以了，然后用宝塔的pm2部署一下，很简单，这里我就不赘述了
@@ -38,10 +38,9 @@ tags:
 
 **前面的地址就填你的域名，或者你的服务器的ip地址**
 
-
  **3. 接下来配置一个nginx代理，**
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/f8c7b0c3f05a463699fc3b157589b022.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2f6ed0bd5136421985f2cdc8a8373bd2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGVmdDB2ZXI=,size_20,color_FFFFFF,t_70,g_se,x_16)
+    ![在这里插入图片描述](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181749991.png)
+![在这里插入图片描述](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202308181749062.png)
 宝塔进去网站的设置里，找到配置文件，这里的端口号很关键，
 **我们这里先找到80端口的那个server**
 在下面加上这么一段
