@@ -42,8 +42,6 @@ tags:
 
 ![image-20230113221608934](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202301132216062.png)
 
-![leftover](http://img.leftover.cn/img-md/20240319223859-2024-03-19.png)
-
 这里是因为没有对esm进行支持,之后我将`runtimeArgs`改成这样
 
 ```json
