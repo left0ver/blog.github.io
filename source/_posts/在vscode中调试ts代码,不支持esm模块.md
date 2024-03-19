@@ -55,7 +55,18 @@ tags:
 
 ![image-20230113221907055](https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/202301132219118.png)
 
-
+{% markmap 400px %}
+- links
+- **inline** ~~text~~ *styles*
+- multiline
+  text
+- `inline code`
+- ```js
+  console.log('code block');
+  console.log('code block');
+  ```
+- KaTeX - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+{% endmarkmap %}
 
 这里是提示没有这个文件,但文件是存在的,因为ts里面导入文件是可以不用扩展名的,之后我将导入的文件加上`.ts`的扩展名,依旧报同样的错误,猜测是因为ts-node在esm下面模块解析的问题
 
