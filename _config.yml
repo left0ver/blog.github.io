@@ -9,7 +9,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 #if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://leftover.cn/blog
+url: http://blog.leftover.cn/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
