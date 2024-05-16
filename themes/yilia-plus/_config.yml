@@ -6,7 +6,7 @@ menu:
 # subNav-子导航
 subNav:
   - github: "https://github.com/left0ver" # (支持设置多个)
-  - blog: "https://leftover.cn"
+  - blog: "https://blog.leftover.cn"
   - csdn: "https://blog.csdn.net/m0_52537576?type=blog"
   # - rss: "#"
   - zhihu: "https://www.zhihu.com/people/left0ver"
