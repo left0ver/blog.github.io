@@ -24,7 +24,7 @@ tags:
    <img src="https://img.leftover.cn/img-md/202406032222697.png" alt="image-20240603222253609" style="zoom:33%;" />
 
 <!-- more -->
-2. sql_mode常用的值
+### sql_mode常用的值
 
    - ONLY_FULL_GROUP_BY： 对于 GROUP BY 聚合操作，如果在 SELECT 中的列，没有在 GROUP BY 中出现，那么这个 SQL 是不合法的，因为列不在 GROUP BY 从句中
 
