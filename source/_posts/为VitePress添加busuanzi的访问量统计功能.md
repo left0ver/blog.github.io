@@ -33,7 +33,7 @@ const { Layout } = DefaultTheme
     <template #nav-bar-content-after
 >
       <div class="page-view">
-      <span  id="busuanzi_container_site_uv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+      <span  id="busuanzi_container_site_uv">本站总访问量<span id="busuanzi_value_site_uv"></span>次</span>
       </div>
     </template>
   </Layout>
