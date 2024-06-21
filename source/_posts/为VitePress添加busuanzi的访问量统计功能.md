@@ -15,7 +15,7 @@ export default defineConfig({
   ],
 })    
 ```
-
+<!-- more -->
 2. 我们需要将展示的浏览人数的代码添加到网站中，这里我使用的是默认的VitePress主题，所以我们需要对默认主题进行扩展，具体可看[扩展默认主题](https://vitepress.dev/zh/guide/extending-default-theme#layout-slots)
    
 ```vue
