@@ -11,7 +11,7 @@ tags:
 wynnforthework fork 的[项目](https://github.com/wynnforthework/pintree/tree/gh-pages)
 
 主要原因在于该项目对原来的pintree进行了一遍改造，使其可以解析本地的google书签。（不过有些bug，例如图标不能显示）
-
+<!-- more -->
 因此主要的思路就比较明朗了：
 
 1. 我们使用dropbox作为主要的中介，前端通过dropbox 的api 获取到保存在dropbox 的书签json文件
