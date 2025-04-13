@@ -118,7 +118,7 @@ theme_config:
   aboutme: 'nickname:leftover 🙈<br> school: 井冈山大学计算机科学与技术专业2019级 😲<br/>favorite: 动漫,二次元⚔️,旅游🌄,乒乓球🏓,跑步🏃,捣鼓小玩意🧸 <br/> QQ:1614674987 🐧<br/> wish: 愿以后能够不再为了生活而奔波,做想做的事😉'
   # 有新标签时，需在这里配置
   tags:
-    Model Optimization: /tags/Model_Optimization
+    model-optimization: /tags/model-optimization
     mysql: /tags/mysql
     Redis: /tags/redis
     vue: /tags/vue
