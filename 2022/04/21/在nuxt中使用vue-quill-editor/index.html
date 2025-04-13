@@ -10,24 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="首先在plugins目录下面创建这个文件夹  添加如下内容 1234567import Vue from &quot;vue&quot;;let VueQuillEditor;if (process.browser) &amp;#123;  VueQuillEditor &#x3D; require(&quot;vue-quill-editor&#x2F;dist&#x2F;ssr&quot;);&amp;#125;Vue.use(VueQu">
+  <meta name="description" content="首先在plugins目录下面创建这个文件夹   image-20220303231018712  添加如下内容 1234567import Vue from &quot;vue&quot;;let VueQuillEditor;if (process.browser) &amp;#123;  VueQuillEditor &#x3D; require(&quot;vue-quill-editor&#x2F;dist&#x2F;ssr&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在nuxt中使用vue-quill-editor 出现document is not defined">
 <meta property="og:url" content="http://blog.leftover.cn/2022/04/21/%E5%9C%A8nuxt%E4%B8%AD%E4%BD%BF%E7%94%A8vue-quill-editor/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="首先在plugins目录下面创建这个文件夹  添加如下内容 1234567import Vue from &quot;vue&quot;;let VueQuillEditor;if (process.browser) &amp;#123;  VueQuillEditor &#x3D; require(&quot;vue-quill-editor&#x2F;dist&#x2F;ssr&quot;);&amp;#125;Vue.use(VueQu">
+<meta property="og:description" content="首先在plugins目录下面创建这个文件夹   image-20220303231018712  添加如下内容 1234567import Vue from &quot;vue&quot;;let VueQuillEditor;if (process.browser) &amp;#123;  VueQuillEditor &#x3D; require(&quot;vue-quill-editor&#x2F;dist&#x2F;ssr&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231018712.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231208982.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231240589.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231708773.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231816364.png">
 <meta property="article:published_time" content="2022-04-21T09:42:01.000Z">
 <meta property="article:modified_time" content="2022-09-18T06:14:03.000Z">
 <meta property="article:author" content="leftover">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231018712.png">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
   
@@ -117,91 +111,95 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color4" href="/tags/mysql"> mysql</a>
+            <a class="color1" href="/tags/Model_Optimization"> Model Optimization</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/redis"> Redis</a>
+            <a class="color2" href="/tags/mysql"> mysql</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/vue"> vue</a>
+            <a class="color10" href="/tags/redis"> Redis</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/react"> react</a>
+            <a class="color5" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/javaScript"> javaScript</a>
+            <a class="color8" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/node"> node</a>
+            <a class="color9" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/html"> html</a>
+            <a class="color2" href="/tags/node"> node</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/css"> css</a>
+            <a class="color3" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color7" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
+            <a class="color3" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/daily"> daily</a>
+            <a class="color6" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/git"> git</a>
+            <a class="color3" href="/tags/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color10" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/webpack"> webpack</a>
+            <a class="color8" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color11" href="/tags/webpack"> webpack</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/Linux"> Linux</a>
+            <a class="color8" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/hexo"> hexo</a>
+            <a class="color5" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color6" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/interesting"> interesting</a>
+            <a class="color11" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/mac"> mac</a>
+            <a class="color11" href="/tags/interesting"> interesting</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/npm"> npm</a>
+            <a class="color7" href="/tags/mac"> mac</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/other"> other</a>
+            <a class="color4" href="/tags/npm"> npm</a>
+          </div>
+          
+          <div>
+            <a class="color3" href="/tags/other"> other</a>
           </div>
           
       </div>
@@ -397,7 +395,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">227字</span>
+      <span class="post-count">237字</span>
     </span>
   </span>
 
@@ -418,38 +416,55 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>首先在plugins目录下面创建这个文件夹</p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231018712.png" alt="image-20220303231018712"></p>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231018712.png"
+alt="image-20220303231018712" />
+<figcaption aria-hidden="true">image-20220303231018712</figcaption>
+</figure>
 <p>添加如下内容</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;<br><span class="hljs-keyword">let</span> <span class="hljs-title class_">VueQuillEditor</span>;<br><span class="hljs-keyword">if</span> (process.<span class="hljs-property">browser</span>) &#123;<br>  <span class="hljs-title class_">VueQuillEditor</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;vue-quill-editor/dist/ssr&quot;</span>);<br>&#125;<br><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">VueQuillEditor</span>);<br></code></pre></td></tr></table></figure>
-
 <span id="more"></span>
-
-<ol>
+<ol type="1">
 <li><p>然后在nuxt.config.js文件中</p>
 <p>加入这几行代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-string">&quot;quill/dist/quill.snow.css&quot;</span>,<br>   <span class="hljs-string">&quot;quill/dist/quill.bubble.css&quot;</span>,<br>   <span class="hljs-string">&quot;quill/dist/quill.core.css&quot;</span>,<br>    <br>    <br>   &#123; <span class="hljs-attr">src</span>: <span class="hljs-string">&quot;~plugins/nuxt-quill-plugin.js&quot;</span>, <span class="hljs-attr">ssr</span>: <span class="hljs-literal">false</span> &#125;,  <br></code></pre></td></tr></table></figure>
-
-<p>如下图所示位置加代码</p>
-</li>
+<p>如下图所示位置加代码</p></li>
 </ol>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231208982.png" alt="image-20220303231208982"></p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231240589.png" alt="image-20220303231240589"></p>
-<ol start="3">
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231208982.png"
+alt="image-20220303231208982" />
+<figcaption aria-hidden="true">image-20220303231208982</figcaption>
+</figure>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231240589.png"
+alt="image-20220303231240589" />
+<figcaption aria-hidden="true">image-20220303231240589</figcaption>
+</figure>
+<ol start="3" type="1">
 <li><p>最后回到自己的vue文件中</p>
 <p>在template中像这样引入vue-quill-editor</p>
 <p>不用在script标签中导入组件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;div<br>        <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;quill-editor&quot;</span><br>        v-<span class="hljs-attr">quill</span>:myQuillEditor=<span class="hljs-string">&quot;editorOption&quot;</span><br>      &gt;&lt;/div&gt;<br></code></pre></td></tr></table></figure>
-
 <p>然后在script中的data中添加</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">editorOption</span>: &#123;<br>       <span class="hljs-comment">// Some Quill options...</span><br>       <span class="hljs-attr">theme</span>: <span class="hljs-string">&quot;snow&quot;</span>,<br>       <span class="hljs-attr">modules</span>: &#123;<br>         <span class="hljs-attr">toolbar</span>: [<br>           [<span class="hljs-string">&quot;bold&quot;</span>, <span class="hljs-string">&quot;italic&quot;</span>, <span class="hljs-string">&quot;underline&quot;</span>, <span class="hljs-string">&quot;strike&quot;</span>],<br>           [<span class="hljs-string">&quot;blockquote&quot;</span>, <span class="hljs-string">&quot;code-block&quot;</span>],<br>         ],<br>       &#125;,<br>     &#125;,<br></code></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231708773.png" alt="image-20220303231708773"></p>
-</li>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231708773.png"
+alt="image-20220303231708773" />
+<figcaption aria-hidden="true">image-20220303231708773</figcaption>
+</figure></li>
 </ol>
-<p>这样一个简单的富文本编辑器就完成了，具体其他配置请看<a target="_blank" rel="noopener" href="https://github.com/surmon-china/vue-quill-editor"><strong>官方文档</strong></a></p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231816364.png" alt="image-20220303231816364"></p>
+<p>这样一个简单的富文本编辑器就完成了，具体其他配置请看<a
+target="_blank" rel="noopener" href="https://github.com/surmon-china/vue-quill-editor"><strong>官方文档</strong></a></p>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220303231816364.png"
+alt="image-20220303231816364" />
+<figcaption aria-hidden="true">image-20220303231816364</figcaption>
+</figure>
 
     
 
@@ -776,15 +791,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,6 +804,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,6 +848,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">推荐好文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Model Optimization</a>
               </li>
              
               <li class="article-tag-list-item">

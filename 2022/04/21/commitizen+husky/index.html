@@ -10,25 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+  <meta name="description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install 安装完了之后可以去package.json的script里面配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="commitizen +husky 实现commit之前eslint检查代码和规范commit的提交">
 <meta property="og:url" content="http://blog.leftover.cn/2022/04/21/commitizen+husky/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install  安装完了之后可以去package.json的script里面配置">
+<meta property="og:description" content="123&#x2F;&#x2F;使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题npx husky-initnpm install 安装完了之后可以去package.json的script里面配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png">
-<meta property="og:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png">
 <meta property="article:published_time" content="2022-04-21T09:38:15.000Z">
 <meta property="article:modified_time" content="2024-03-19T17:48:06.000Z">
 <meta property="article:author" content="leftover">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="前端工程化">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png">
   
     <link rel="alternative" href="/atom.xml" title="码上神域" type="application/atom+xml">
   
@@ -118,91 +112,95 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color4" href="/tags/mysql"> mysql</a>
+            <a class="color1" href="/tags/Model_Optimization"> Model Optimization</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/redis"> Redis</a>
+            <a class="color2" href="/tags/mysql"> mysql</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/vue"> vue</a>
+            <a class="color10" href="/tags/redis"> Redis</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/react"> react</a>
+            <a class="color5" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/javaScript"> javaScript</a>
+            <a class="color8" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/node"> node</a>
+            <a class="color9" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/html"> html</a>
+            <a class="color2" href="/tags/node"> node</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/css"> css</a>
+            <a class="color3" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color7" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
+            <a class="color3" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/daily"> daily</a>
+            <a class="color6" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/git"> git</a>
+            <a class="color3" href="/tags/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color10" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/webpack"> webpack</a>
+            <a class="color8" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color11" href="/tags/webpack"> webpack</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/Linux"> Linux</a>
+            <a class="color8" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/hexo"> hexo</a>
+            <a class="color5" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color6" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/interesting"> interesting</a>
+            <a class="color11" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/mac"> mac</a>
+            <a class="color11" href="/tags/interesting"> interesting</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/npm"> npm</a>
+            <a class="color7" href="/tags/mac"> mac</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/other"> other</a>
+            <a class="color4" href="/tags/npm"> npm</a>
+          </div>
+          
+          <div>
+            <a class="color3" href="/tags/other"> other</a>
           </div>
           
       </div>
@@ -398,7 +396,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">210字</span>
+      <span class="post-count">218字</span>
     </span>
   </span>
 
@@ -418,24 +416,42 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
+    <ol type="1">
 <li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//使用下面两个命令下载husky，不要使用手动安装，Windows下会出现很多问题</span><br>npx husky-init<br>npm install<br></code></pre></td></tr></table></figure>
-
 <p>安装完了之后可以去package.json的script里面配置</p>
 <span id="more"></span>
-
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png" alt="image-20220226210621805"></p>
-</li>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210621805.png"
+alt="image-20220226210621805" />
+<figcaption aria-hidden="true">image-20220226210621805</figcaption>
+</figure>
+<p>之后会生成一个.husky文件夹，<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png"
+alt="image-20220226210708634" /></p></li>
 </ol>
-<p>   之后会生成一个.husky文件夹，<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210708634.png" alt="image-20220226210708634"></p>
 <p>在箭头所示的文件夹中配置commit之前需要执行的命令，一般会配置一些eslint检查代码的命令，之后就可以了，当你commit代码的时候就会执行你配置的命令啦</p>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png" alt="image-20220226210800988"></p>
-<ol start="2">
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226210800988.png"
+alt="image-20220226210800988" />
+<figcaption aria-hidden="true">image-20220226210800988</figcaption>
+</figure>
+<ol start="2" type="1">
 <li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//执行下面两个命令</span><br>npm i commitizen -D<br>commitizen init cz-conventional-changelog --save-dev --save-exact<br><span class="hljs-comment">/*然后在package.json的script里面配置一下命令，因为我们使用了husky，这里的命令不能使用commit,否则执行命令的时候会提交两次,到这里就完成啦，之后commit代码时会让你选择commit的message，如下图*/</span><br></code></pre></td></tr></table></figure>
-
-<img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png" alt="image-20220226211100047"></li>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211100047.png"
+alt="image-20220226211100047" />
+<figcaption aria-hidden="true">image-20220226211100047</figcaption>
+</figure></li>
 </ol>
-<p><img src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png" alt="image-20220226211416581"></p>
+<figure>
+<img
+src="https://leftover-md.oss-cn-guangzhou.aliyuncs.com/img-md/image-20220226211416581.png"
+alt="image-20220226211416581" />
+<figcaption aria-hidden="true">image-20220226211416581</figcaption>
+</figure>
 
     
 
@@ -766,15 +782,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,6 +795,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -823,6 +839,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">推荐好文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Model Optimization</a>
               </li>
              
               <li class="article-tag-list-item">

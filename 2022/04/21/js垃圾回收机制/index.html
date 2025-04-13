@@ -10,12 +10,12 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="js垃圾回收机制 在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。  在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏  现在大部分的浏览器的引擎都是使用的标记的算法（mark-and-sweep）">
+  <meta name="description" content="js垃圾回收机制  在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。 在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏 现在大部分的浏览器的引擎都是使用的标记的算法（mark-and-sweep）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript的垃圾回收机制">
 <meta property="og:url" content="http://blog.leftover.cn/2022/04/21/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="码上神域">
-<meta property="og:description" content="js垃圾回收机制 在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。  在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏  现在大部分的浏览器的引擎都是使用的标记的算法（mark-and-sweep）">
+<meta property="og:description" content="js垃圾回收机制  在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。 在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏 现在大部分的浏览器的引擎都是使用的标记的算法（mark-and-sweep）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-21T10:02:38.000Z">
 <meta property="article:modified_time" content="2022-09-07T15:41:59.000Z">
@@ -111,91 +111,95 @@
       <div class="tags tagcloud">
         
           <div>
-            <a class="color4" href="/tags/mysql"> mysql</a>
+            <a class="color1" href="/tags/Model_Optimization"> Model Optimization</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/redis"> Redis</a>
+            <a class="color2" href="/tags/mysql"> mysql</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/vue"> vue</a>
+            <a class="color10" href="/tags/redis"> Redis</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/react"> react</a>
+            <a class="color5" href="/tags/vue"> vue</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/javaScript"> javaScript</a>
+            <a class="color8" href="/tags/react"> react</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/node"> node</a>
+            <a class="color9" href="/tags/javaScript"> javaScript</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/html"> html</a>
+            <a class="color2" href="/tags/node"> node</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/css"> css</a>
+            <a class="color3" href="/tags/html"> html</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
+            <a class="color7" href="/tags/css"> css</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
+            <a class="color3" href="/tags/%E5%93%86%E5%95%A6A%E6%A2%A6%E7%9A%84%E5%8F%A3%E8%A2%8B"> 哆啦A梦的口袋</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/daily"> daily</a>
+            <a class="color6" href="/tags/%E6%8E%A8%E8%8D%90%E5%A5%BD%E6%96%87"> 推荐好文</a>
           </div>
           
           <div>
-            <a class="color3" href="/tags/git"> git</a>
+            <a class="color3" href="/tags/daily"> daily</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
+            <a class="color10" href="/tags/git"> git</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/webpack"> webpack</a>
+            <a class="color8" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96"> 前端工程化</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
+            <a class="color11" href="/tags/webpack"> webpack</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/Linux"> Linux</a>
+            <a class="color8" href="/tags/%E9%83%A8%E7%BD%B2"> 部署</a>
           </div>
           
           <div>
-            <a class="color4" href="/tags/hexo"> hexo</a>
+            <a class="color5" href="/tags/Linux"> Linux</a>
           </div>
           
           <div>
-            <a class="color10" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
+            <a class="color6" href="/tags/hexo"> hexo</a>
           </div>
           
           <div>
-            <a class="color5" href="/tags/interesting"> interesting</a>
+            <a class="color11" href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"> 字体图标</a>
           </div>
           
           <div>
-            <a class="color8" href="/tags/mac"> mac</a>
+            <a class="color11" href="/tags/interesting"> interesting</a>
           </div>
           
           <div>
-            <a class="color2" href="/tags/npm"> npm</a>
+            <a class="color7" href="/tags/mac"> mac</a>
           </div>
           
           <div>
-            <a class="color6" href="/tags/other"> other</a>
+            <a class="color4" href="/tags/npm"> npm</a>
+          </div>
+          
+          <div>
+            <a class="color3" href="/tags/other"> other</a>
           </div>
           
       </div>
@@ -411,79 +415,73 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="js垃圾回收机制"><a href="#js垃圾回收机制" class="headerlink" title="js垃圾回收机制"></a>js垃圾回收机制</h1><ul>
-<li><p>在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。</p>
-</li>
-<li><p>在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏</p>
-</li>
+    <h1 id="js垃圾回收机制">js垃圾回收机制</h1>
+<ul>
+<li><p>在一些语言中，垃圾回收是需要程序员手动回收，如c，c++。但像java，javaScript中的垃圾回收是浏览器自动进行的。</p></li>
+<li><p>在垃圾回收中，对象的可达性就变得尤为关键，对于一些不可达的变量，js引擎会自动将其回收掉，以防止内存泄漏</p></li>
 <li><p>现在大部分的浏览器的引擎都是使用的标记的算法（<code>mark-and-sweep</code>）</p>
 <span id="more"></span>
-
 <ul>
-<li><h4 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h4><p>js垃圾回收器会定期执行垃圾回收算法</p>
+<li><h4 id="算法实现">算法实现</h4>
+<p>js垃圾回收器会定期执行垃圾回收算法</p>
 <ul>
-<li><p>垃圾收集器先找到所有的根，并标记他们</p>
-</li>
-<li><p>然后遍历并标记来自这些根的引用（这些变量根下面的）</p>
-</li>
-<li><p>如此往复，直到所有的可达的变量都被访问到</p>
-</li>
-<li><p>最后未标记的对象被删除，被垃圾回收器回收</p>
-</li>
+<li><p>垃圾收集器先找到所有的根，并标记他们</p></li>
+<li><p>然后遍历并标记来自这些根的引用（这些变量根下面的）</p></li>
+<li><p>如此往复，直到所有的可达的变量都被访问到</p></li>
+<li><p>最后未标记的对象被删除，被垃圾回收器回收</p></li>
 </ul>
 <p>这两句话是什么意思呢,看下面的代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> obj=&#123;<br>          <span class="hljs-attr">info</span>:&#123;<br>              <span class="hljs-attr">name</span>:<span class="hljs-string">&quot;zwc&quot;</span><br>          &#125;,<br>          <span class="hljs-attr">pwd</span>:<span class="hljs-string">&quot;123456&quot;</span><br>      &#125;<br></code></pre></td></tr></table></figure>
-
 <p>1.首先找到所有的根，这里只有一个根，即obj这个对象，找到他并标记</p>
-<p>2.其次再从遍历这些根，这里找到这个根下面的引用（变量），这里有2个引用，即info，pwd ，并标记他们</p>
+<p>2.其次再从遍历这些根，这里找到这个根下面的引用（变量），这里有2个引用，即info，pwd
+，并标记他们</p>
 <p>3.因为info是个对象，然后再找到info对象下面的引用，name 并标记他</p>
-<p>   ​      <strong>这里的算法有点类似广度优先遍历(<code>bfs</code>)</strong></p>
-<p>  这里倘若我们执行下面的代码</p>
+<p>​
+<strong>这里的算法有点类似广度优先遍历(<code>bfs</code>)</strong></p>
+<p>这里倘若我们执行下面的代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">obj.<span class="hljs-property">info</span>.<span class="hljs-property">name</span>=<span class="hljs-literal">null</span><br></code></pre></td></tr></table></figure>
-
 <p>则obj.info.name 这个变量就会被回收</p>
 <p>倘若我们执行下面这个代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">obj=<span class="hljs-literal">null</span><br></code></pre></td></tr></table></figure>
-
-<p> 则obj这整个对象就都会被回收，这里为什么怎么对象都会被回收呢？</p>
-<p>​     虽然obj对象里面的引用并没有置为null，但是obj对象置为了null，obj下面的所有变量就变成了<code>不可达</code>，因为obj下面的变量只能通过obj来访问，现在obj为null，obj已经不可达了，自然下面的引用也是不可达，因此整个对象就被回收掉了 </p>
+<p>则obj这整个对象就都会被回收，这里为什么怎么对象都会被回收呢？</p>
+<p>​
+虽然obj对象里面的引用并没有置为null，但是obj对象置为了null，obj下面的所有变量就变成了<code>不可达</code>，因为obj下面的变量只能通过obj来访问，现在obj为null，obj已经不可达了，自然下面的引用也是不可达，因此整个对象就被回收掉了</p>
 <ul>
 <li><p>对于Map,Set这两个个数据结构来说,它的垃圾回收和其他的数据结构有点不一样</p>
-<p> 当你执行了下面这一段代码</p>
-</li>
+<p>当你执行了下面这一段代码</p></li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> map= <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>()<br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-number">1</span>)<br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;name2&quot;</span>,<span class="hljs-number">4</span>)<br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;name3&quot;</span>,<span class="hljs-number">5</span>)<br>map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;name&quot;</span>)=<span class="hljs-literal">null</span><br></code></pre></td></tr></table></figure>
-
 <p>现在你可以猜测一下map里的”name” 这个key 有没有被回收掉呢？</p>
 <p>答案是：没有</p>
 <p>理论上来说是要被回收掉的，可是为什么没有被回收掉呢？</p>
-<p>这是因为Map集合的key是强引用，只有执行 map =null 的时候，map集合和它里面的键值&lt;key,value&gt;对才会被回收</p>
+<p>这是因为Map集合的key是强引用，只有执行 map =null
+的时候，map集合和它里面的键值&lt;key,value&gt;对才会被回收</p>
 <p>当我们map里面的数据比较多的时候，这样就容易导致内存泄漏</p>
 <ul>
-<li>因此推出了weakMap 这个数据结构,Set 集合对应的是weakSet,原理和weakMap一样</li>
+<li>因此推出了weakMap 这个数据结构,Set
+集合对应的是weakSet,原理和weakMap一样</li>
 </ul>
-<p>weakMap 是弱引用，当你将里面的某个变量置为null，这时候垃圾回收器就会将其回收，这个key就没了。</p>
+<p>weakMap
+是弱引用，当你将里面的某个变量置为null，这时候垃圾回收器就会将其回收，这个key就没了。</p>
 <p>因此WeakMap 只有4个方法（key只能是object类型）</p>
 <ul>
-<li><p><code>weakMap.get(key)</code></p>
-</li>
-<li><p><code>weakMap.set(key, value)</code></p>
-</li>
-<li><p><code>weakMap.delete(key)</code></p>
-</li>
+<li><p><code>weakMap.get(key)</code></p></li>
+<li><p><code>weakMap.set(key, value)</code></p></li>
+<li><p><code>weakMap.delete(key)</code></p></li>
 <li><p><code>weakMap.has(key)</code></p>
 <p><strong>weakMap不支持迭代，和获取所有key或者value的方法</strong></p>
-<p>​      这是因为weakMap是弱引用，当我们将一个key的value置为null时，理论上来说我们是不知道它什么时候被回收的，这取决于引擎的算法的具体设计，有时候cpu比较忙的时候就会晚一点回收，因此weakMap里面的key的数量是不确定的，因此有了上述限制。</p>
-</li>
+<p>​
+这是因为weakMap是弱引用，当我们将一个key的value置为null时，理论上来说我们是不知道它什么时候被回收的，这取决于引擎的算法的具体设计，有时候cpu比较忙的时候就会晚一点回收，因此weakMap里面的key的数量是不确定的，因此有了上述限制。</p></li>
 </ul>
 <p><strong>我们常说要避免全局变量，那么我们为什么要避免全局变量呢？</strong></p>
-<p>​        这是因为当你定义了一个全局变量，全局变量是在最顶层，然后垃圾回收器就将这个对象标记为根，然后这个对象就一直存在内存中，除非你自己手动将其置为null，这时候垃圾回收器就会将其回收。</p>
-<p>​       但很多时候我们程序员经常会忽略掉把一些不要用的变量置为null，这样就容易导致内存泄漏，尤其当项目很大的时候，</p>
+<p>​
+这是因为当你定义了一个全局变量，全局变量是在最顶层，然后垃圾回收器就将这个对象标记为根，然后这个对象就一直存在内存中，除非你自己手动将其置为null，这时候垃圾回收器就会将其回收。</p>
+<p>​
+但很多时候我们程序员经常会忽略掉把一些不要用的变量置为null，这样就容易导致内存泄漏，尤其当项目很大的时候，</p>
 <p><strong>那为什么局部变量就不会呢？</strong></p>
-<p>​       因为当我们在一个函数里面定义了一个局部变量，我们调用完了这个函数之后，这些变量就不存在了，会被垃圾回收器回收，这样就可以较好地避免内存泄漏。</p>
-</li>
-</ul>
-</li>
+<p>​
+因为当我们在一个函数里面定义了一个局部变量，我们调用完了这个函数之后，这些变量就不存在了，会被垃圾回收器回收，这样就可以较好地避免内存泄漏。</p></li>
+</ul></li>
 </ul>
 
     
@@ -811,15 +809,11 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -828,6 +822,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,6 +866,10 @@ gitalk.render('gitalk-container')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">推荐好文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Model Optimization</a>
               </li>
              
               <li class="article-tag-list-item">
