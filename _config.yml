@@ -7,6 +7,27 @@ author: leftover
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
+math:
+  # every_page: true
+# 数学公式
+  mathjax:
+    enable: true
+    # per_page: true
+    cdn: 
+    tags: none # or 'ams' or 'all'
+    single_dollars: true # enable single dollar signs as in-line math delimiters
+    cjk_width: 0.9 # relative CJK char width
+    normal_width: 0.6 # relative normal (monospace) width
+    append_css: true # add CSS to pages rendered by MathJax
+    every_page: true # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+    packages: # extra packages to load
+    extension_options: {}
+      # you can put your extension options here
+      # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
+  katex:
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false  
 # URL
 #if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://blog.leftover.cn/
@@ -97,6 +118,7 @@ theme_config:
   aboutme: 'nickname:leftover 🙈<br> school: 井冈山大学计算机科学与技术专业2019级 😲<br/>favorite: 动漫,二次元⚔️,旅游🌄,乒乓球🏓,跑步🏃,捣鼓小玩意🧸 <br/> QQ:1614674987 🐧<br/> wish: 愿以后能够不再为了生活而奔波,做想做的事😉'
   # 有新标签时，需在这里配置
   tags:
+    Model Optimization: /tags/Model_Optimization
     mysql: /tags/mysql
     Redis: /tags/redis
     vue: /tags/vue
