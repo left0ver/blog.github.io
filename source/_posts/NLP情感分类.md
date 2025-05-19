@@ -19,6 +19,7 @@ tags:
    - 一般是先进行分词，再统计每个词的频率，若语料库比较大，可以根据情况过滤掉低频词（也可以不过滤）
    - 最后得到词表和stoi（词到索引的映射）、itos（索引到词的映射）
    - 通常我们会加入一些特殊的词，例如`<unk>` 表示一个词表不存在的词、`<pad> `在训练的时候进行填充来保证输入的向量维度相同
+   
 <!-- more -->
 
  ```python
@@ -561,3 +562,6 @@ trainer.evaluate()
 ## 数据集和模型
 
 可以在hugging face上找到数据集和微调之后的模型，正常的[数据集](https://huggingface.co/datasets/left0ver/sentiment-classification) , 滑动窗口版本的[数据集](https://huggingface.co/datasets/left0ver/sentiment-classification/tree/window_version) 。没有使用滑动窗口的方法进行微调得到的[模型](https://huggingface.co/left0ver/bert-base-chinese-finetune-sentiment-classification)
+
+# 项目代码
+代码请查看[left0ver/Sentiment-Classification](https://github.com/left0ver/Sentiment-Classification)
