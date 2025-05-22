@@ -563,5 +563,10 @@ trainer.evaluate()
 
 可以在hugging face上找到数据集和微调之后的模型，正常的[数据集](https://huggingface.co/datasets/left0ver/sentiment-classification) , 滑动窗口版本的[数据集](https://huggingface.co/datasets/left0ver/sentiment-classification/tree/window_version) 。没有使用滑动窗口的方法进行微调得到的[模型](https://huggingface.co/left0ver/bert-base-chinese-finetune-sentiment-classification)
 
+# 遇到的一些其他问题
+1. 在上面训练的时候不管是使用传统的LSTM 还是使用bert进行训练的时候，都碰到了loss不降的情况，在使用传统的LSTM的时候，当时只使用了单层、单向的LSTM，然后当时损失一直降不下去，这里应该是模型结构太简单了，欠拟合了，后面改成了双向、双层的LSTM，并把每一层的最后一个隐藏层的输出和第一个隐藏层的输出进行concat，得到一个4*hidden_size的tensor，这样可以最大程度地提取文本的特征
+
+2. 在训练bert的时候也遇到了这种情况，当时是微调bert，学习率设置成了和训练LSTM时一样的学习率（0.001），lr过大导致loss不下降，后面改成了1e-5就ok了，因此我们在微调的时候学习率应该设置的小一点。
+
 # 项目代码
 代码请查看[left0ver/Sentiment-Classification](https://github.com/left0ver/Sentiment-Classification)
