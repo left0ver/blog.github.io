@@ -20,6 +20,7 @@ tags:
    - 最后得到词表和stoi（词到索引的映射）、itos（索引到词的映射）
    - 通常我们会加入一些特殊的词，例如`<unk>` 表示一个词表不存在的词、`<pad> `在训练的时候进行填充来保证输入的向量维度相同
    
+
 <!-- more -->
 
  ```python
@@ -57,7 +58,7 @@ tags:
        
        def __len__(self):
            return len(self.vocab)
-  ```
+ ```
 
    >需要注意的是我们只能使用训练集中的数据来构建词表
 
@@ -166,7 +167,7 @@ def padding_collate_fn(batch):
    - 这里我们使用上面训练得到的词向量来初始化 nn.Embedding
    - 使用了双向lstm，隐藏层的大小为100，num_layers =2
    - 一开始我使用的是单向的lstm、隐藏层的大小为64，num_laryers =1 ,但是训练的时候loss一直不下降，好像加大隐藏层的大小也没用，后面看了李沐老师的动手学深度学习的[情感分析一章](https://zh.d2l.ai/chapter_natural-language-processing-applications/sentiment-analysis-rnn.html), 修改了模型结构，训练的效果有了明显的提升。现在看来应该是当时的模型太简单，欠拟合了。
-    
+   
     像这种文本分类、文本翻译的任务，很适合使用双向的RNN，可以得到更多的语义特征
 
 ```python
@@ -570,3 +571,341 @@ trainer.evaluate()
 
 # 项目代码
 代码请查看[left0ver/Sentiment-Classification](https://github.com/left0ver/Sentiment-Classification)
+
+-----------------------------------------------分割线---------------------------
+
+# 使用Prompting 来进行微调
+我们都知道，bert在进行预训练的时候是通过预测文本中被遮盖的词语（遮盖语言建模 MLM）和 判断一个文本是否跟随另一个（下一句预测 NSP）来进行预训练的。因此bert一开始预训练的时候并不是用来做文本分类的，我们通过在bert的后面加了一个线性分类头做的分类任务，从而将bert与分类任务之间建立联系。
+
+## 什么是Prompt方法？
+Prompt方法的核心就是通过某个模板将要解决的问题转换到与预训练模型任务类似的形式来进行处理。
+例如对于这个情感分类任务，我们可以在text的前面加上`总体上来说很[MASK]。`，然后我们使用模型来预测被遮挡的词。从而将分类任务转换到MLM上
+
+> 可以阅读一下[Prompt方法简介](https://xiaosheng.blog/2022/09/10/what-is-prompt)
+
+## 思路
+
+我们的模板为`总体上来说很[MASK]。`，例如我们可以假定`好`为积极、`差`为消极，因此我们的label word为 "好"和 ”差“。 即让模型预测这个被遮住的词为好还是差，可以看出这是一个token级别的分类任务虽然模型会输出词表中所有词的预测概率，但是我们只关心在label word上的预测结果。
+
+> 这种方法要求我们的词汇表中有合适的label word 来代表每一个类别，但是对于一些比较复杂的任务，其类别比较不好用一个token来表示，或者词汇表并没有合适的词来表示该类别。
+
+因此我们通常会为每一个类别构建一个可学习的虚拟token（又称伪token），然后我们使用类别描述来初始化伪token的向量。
+
+例如这里我们添加两个伪token:`[POS]`、`[NEG]`
+分为两步，1. 添加特殊的token 。 2. 重新resize embedding的大小。
+
+默认情况下是新加的两个向量的值是随机初始化的，我们可以使用将对类别描述进行分词，使用分词之后的token的平均值来初始化对应的伪token的词向量。
+
+```python
+tokenizer.add_special_tokens({'additional_special_tokens': ['[POS]', '[NEG]']})
+
+
+model = BertForPrompt.from_pretrained(checkpoint, config=config).to(device)
+
+verbalizer = {
+        'pos': {
+            'token': '[POS]', 'id': tokenizer.convert_tokens_to_ids("[POS]"), 
+            'description': '好的、优秀的、正面的评价、积极的态度'
+        }, 
+        'neg': {
+            'token': '[NEG]', 'id': tokenizer.convert_tokens_to_ids("[NEG]"), 
+            'description': '差的、糟糕的、负面的评价、消极的态度'
+        }
+    }
+
+model.resize_token_embeddings(len(tokenizer))
+print(f"initialize embeddings of {verbalizer['pos']['token']} and {verbalizer['neg']['token']}")
+with torch.no_grad():
+    pos_tokenized = tokenizer(verbalizer['pos']['description'])
+    pos_tokenized_ids = tokenizer.convert_tokens_to_ids(pos_tokenized)
+    neg_tokenized = tokenizer(verbalizer['neg']['description'])
+    neg_tokenized_ids = tokenizer.convert_tokens_to_ids(neg_tokenized)
+    new_embedding = model.bert.embeddings.word_embeddings.weight[pos_tokenized_ids].mean(axis=0)
+    model.bert.embeddings.word_embeddings.weight[pos_id, :] = new_embedding.clone().detach().requires_grad_(True)
+    new_embedding = model.bert.embeddings.word_embeddings.weight[neg_tokenized_ids].mean(axis=0)
+    model.bert.embeddings.word_embeddings.weight[neg_id, :] = new_embedding.clone().detach().requires_grad_(True)    
+```
+
+## 训练代码
+
+ ```python
+import os
+import random
+import numpy as np
+import torch
+from torch import  nn
+from torch.utils.data import Dataset, DataLoader
+from transformers import AutoTokenizer, AutoConfig,BertForMaskedLM
+from transformers.modeling_outputs import MaskedLMOutput
+from transformers.optimization import get_scheduler
+from sklearn.metrics import classification_report,f1_score
+from tqdm.auto import tqdm
+from torch.optim import AdamW
+from transformers.models.auto.tokenization_auto import AutoTokenizer
+import pandas as pd
+
+vtype = "virtual"  # 'base' or 'virtual'
+max_length = 512
+batch_size = 16
+learning_rate = 1e-5
+epoch_num = 6
+
+
+def seed_everything(seed=42):
+    random.seed(seed)
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+
+
+def get_prompt(x):
+    prompt = f"总体上来说很[MASK]。{x}"
+    return {"prompt": prompt, "mask_offset": prompt.find("[MASK]")}
+
+
+def get_verbalizer(tokenizer, vtype):
+    assert vtype in ["base", "virtual"]
+    return (
+        {
+            "pos": {"token": "好", "id": tokenizer.convert_tokens_to_ids("好")},
+            "neg": {"token": "差", "id": tokenizer.convert_tokens_to_ids("差")},
+        }
+        if vtype == "base"
+        else {
+            "pos": {
+                "token": "[POS]",
+                "id": tokenizer.convert_tokens_to_ids("[POS]"),
+                "description": "好的、优秀的、正面的评价、积极的态度",
+            },
+            "neg": {
+                "token": "[NEG]",
+                "id": tokenizer.convert_tokens_to_ids("[NEG]"),
+                "description": "差的、糟糕的、负面的评价、消极的态度",
+            },
+        }
+    )
+
+
+seed_everything(42)
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Using {device} device")
+
+
+class ChnSentiCorp(Dataset):
+    def __init__(self, data_file):
+        self.data = self.load_data(data_file)
+
+    def load_data(self, data_file):
+        df = pd.read_csv(
+            data_file, sep="\t", encoding="utf-8"
+        )
+        if "qid" in df.columns:
+        
+            df =df.drop(columns =["qid"])
+        Data =[
+            {
+                "comment": df.iloc[i, 1],
+                "prompt": get_prompt(df.iloc[i, 1])["prompt"],
+                "mask_offset": get_prompt(df.iloc[i, 1])["mask_offset"],
+                "label": df.iloc[i, 0],
+            }
+            for i in range(len(df))
+        ]
+        return Data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+
+
+
+checkpoint = "bert-base-chinese"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+if vtype == "virtual":
+    new_tokens = ["[POS]", "[NEG]"]
+    print(f"add new tokens: {new_tokens}")
+    tokenizer.add_special_tokens({"additional_special_tokens": new_tokens})
+
+verbalizer = get_verbalizer(tokenizer, vtype=vtype)
+pos_id, neg_id = verbalizer["pos"]["id"], verbalizer["neg"]["id"]
+
+
+# 动态填充
+def data_collator(batch_samples):
+    batch_inputs = tokenizer(
+        [sample["prompt"] for sample in batch_samples],
+        padding=True,
+        truncation=True,
+        max_length=max_length,
+        return_tensors="pt",
+    )
+    batch_mask_idxs =[]
+    for sample in batch_samples:
+        encoding = tokenizer(sample['prompt'], truncation=True)
+        # 获得[MASK]的位置，后续只取[MASK]上的隐藏层的输出到MLM的预测头中
+        mask_idx = encoding.char_to_token(sample['mask_offset'])
+        assert mask_idx is not None
+        batch_mask_idxs.append(mask_idx)
+    label_word_id = [neg_id, pos_id]
+    labels = [sample["label"] for sample in batch_samples]
+
+    return {
+        'batch_inputs': batch_inputs, 
+        'label_word_id': label_word_id, 
+        'labels': labels,
+        "batch_mask_idxs": batch_mask_idxs
+    }
+
+def to_device(batch):
+    batch_inputs = {k: v.to(device) for k, v in batch['batch_inputs'].items()}
+    labels = torch.tensor(batch['labels']).to(device)
+    batch_mask_idxs = torch.tensor(batch['batch_mask_idxs']).to(device)
+    return {
+        'batch_inputs': batch_inputs, 
+        'label_word_id': batch['label_word_id'], 
+        'labels': labels,
+        "batch_mask_idxs": batch_mask_idxs
+    }
+train_dataloader = DataLoader(
+    ChnSentiCorp("data/train.tsv"),
+    batch_size=batch_size,
+    shuffle=True,
+    collate_fn=data_collator,
+)
+test_dataloader = DataLoader(
+    ChnSentiCorp("data/dev.tsv"),
+    batch_size=batch_size,
+    shuffle=False,
+    collate_fn=data_collator,
+)
+
+
+# 只选择[MASK]位置的隐藏层输出
+def batch_index_select(sequence_output, dim, index):
+    """
+    index: [batch_size, 1]
+    """
+    for i in range(1,len(sequence_output.shape)):
+        if i!= dim:
+            index = index.unsqueeze(i)
+    expanse = list(sequence_output.shape)
+    expanse[0] = -1
+    expanse[dim] =-1
+    index = index.expand(expanse)
+    return torch.gather(sequence_output, dim, index)
+
+# 这里因为我们需要改一些前向传播的代码，因此这里我们继承BertForMaskedLM类，这样会更灵活
+class Prompt_Bert(BertForMaskedLM):
+    def __init__(self, config):
+        super().__init__(config)
+
+    def forward(self, batch_inputs, label_word_id, labels, batch_mask_idxs):
+        outputs = self.bert(
+            **batch_inputs,
+        )
+
+        last_hidden_state = outputs.last_hidden_state
+        # 这里只选择[MASK]位置的隐藏层输出
+        batch_mask_reps =batch_index_select(last_hidden_state, 1, batch_mask_idxs.unsqueeze(-1)).squeeze(1)
+       # 只取出[NEG] 和 [POS]的输出结果，计算loss
+        prediction_scores = self.cls(batch_mask_reps)[:,label_word_id]
+			 
+        if labels is not None:
+            loss_fn = nn.CrossEntropyLoss()
+            loss = loss_fn(prediction_scores, labels)
+            return MaskedLMOutput(
+              loss=loss,
+              logits=prediction_scores,
+              hidden_states=outputs.hidden_states,
+              attentions=outputs.attentions,
+        )
+
+def test_loop(model, test_dataloader,test_progress_bar):
+    model.eval()
+    all_preds = []
+    all_labels = []
+    with torch.no_grad():
+        for inputs in test_dataloader:
+            inputs = to_device(inputs)
+            outputs = model(**inputs)
+            logits = outputs.logits
+            preds = logits.argmax(dim=-1).cpu().numpy()
+            labels = inputs['labels'].cpu().numpy()
+            all_preds.extend(preds)
+            all_labels.extend(labels)
+            test_progress_bar.update(1)
+    return f1_score(all_labels, all_preds)
+
+  
+def train_loop(model, train_dataloader, optimizer, scheduler,progress_bar):
+    epoch_loss =0
+    model.train()
+    for inputs in train_dataloader:
+        inputs = to_device(inputs)
+        outputs = model(**inputs)
+        loss = outputs.loss
+        loss.backward()
+        epoch_loss += loss.item()
+        optimizer.step()
+        scheduler.step()
+        optimizer.zero_grad()
+        progress_bar.update(1)
+        progress_bar.set_description(f'cur_loss: {loss.item():>4f}')
+    return epoch_loss    
+
+
+
+config = AutoConfig.from_pretrained(checkpoint)
+model = Prompt_Bert.from_pretrained(checkpoint,config=config)
+model = model.to(device)
+
+#resize embeddings矩阵的大小，并对新加入的token进行初始化
+if vtype == 'virtual':
+    model.resize_token_embeddings(len(tokenizer))
+    print(f"initialize embeddings of {verbalizer['pos']['token']} and {verbalizer['neg']['token']}")
+    with torch.no_grad():
+        pos_tokenized = tokenizer(verbalizer['pos']['description'])
+        pos_tokenized_ids = tokenizer.convert_tokens_to_ids(pos_tokenized)
+        neg_tokenized = tokenizer(verbalizer['neg']['description'])
+        neg_tokenized_ids = tokenizer.convert_tokens_to_ids(neg_tokenized)
+        new_embedding = model.bert.embeddings.word_embeddings.weight[pos_tokenized_ids].mean(axis=0)
+        model.bert.embeddings.word_embeddings.weight[pos_id, :] = new_embedding.clone().detach().requires_grad_(True)
+        new_embedding = model.bert.embeddings.word_embeddings.weight[neg_tokenized_ids].mean(axis=0)
+        model.bert.embeddings.word_embeddings.weight[neg_id, :] = new_embedding.clone().detach().requires_grad_(True)
+  
+
+optimizer = AdamW(model.parameters(), lr=learning_rate)
+lr_scheduler = get_scheduler(
+    "cosine",
+    optimizer=optimizer,
+    num_warmup_steps=0,
+    num_training_steps=len(train_dataloader) * epoch_num,
+)
+
+best_f1_score = 0.0
+train_progress_bar = tqdm(range(len(train_dataloader) * epoch_num), desc="Training")
+for epoch in range(epoch_num):
+    print(f"Epoch {epoch + 1}/{epoch_num}")
+    epoch_loss = train_loop(model, train_dataloader, optimizer, lr_scheduler, train_progress_bar)
+    print(f"Epoch {epoch + 1} average loss: {epoch_loss / len(train_dataloader)}")
+    
+    # Evaluate the model on the test set
+    test_progress_bar = tqdm(range(len(test_dataloader)), desc="Testing")
+    f1= test_loop(model, test_dataloader,test_progress_bar)
+    if f1 > best_f1_score:
+        best_f1_score = f1
+        print(f"New best F1 score: {best_f1_score:.4f}")
+        model.save_pretrained(f"p-tuning-finetune/eval_f1_score_{(f1):.4f}_best_model")
+ ```
+
+代码可在[p-tuning-finetune.py](https://github.com/left0ver/Sentiment-Classification/blob/main/p-tuning-finetune.py)上找到
+
+## 参考
+
+1. [Prompt 方法简介](https://xiaosheng.blog/2022/09/10/what-is-prompt)
+2. [Prompting 情感分析](https://transformers.run/c3/2022-10-10-transformers-note-10/)
