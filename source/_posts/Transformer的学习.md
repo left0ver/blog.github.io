@@ -7,6 +7,8 @@ tags:
 ---
 # 手写transformer
 
+>所有代码可在[study-transformer](https://github.com/left0ver/study-transformer)中找到
+
 ## Input_Embedding
 
 通常我们首先会构建词表，然后每个词对应一个idx，即编号，然后通过embedding层转换为词向量
