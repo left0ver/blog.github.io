@@ -119,6 +119,7 @@ theme_config:
   # 有新标签时，需在这里配置
   tags:
     AI: /tags/AI
+    python: /tags/python
     model-optimization: /tags/model-optimization
     mysql: /tags/mysql
     Redis: /tags/redis
