@@ -4,6 +4,7 @@ mathjax: true
 date: 2026-03-18 22:05:49
 tags:
   - AI
+  - Agent
 ---
 # claude code使用提示词来调用skill
 我使用了`charles`抓包工具对请求进行抓包，通过对请求体来分析其实现原理,claude code的请求的请求体有很多字段，我们主要看message字段即可
