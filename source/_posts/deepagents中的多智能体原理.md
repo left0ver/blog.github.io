@@ -280,7 +280,7 @@ Updated todo list to [{'content': '梳理报告结构与竞品选择标准', 'st
 ## 局限性和改进
 上面的todo list 是单纯地将一个复杂的任务拆分为多个顺序执行的小任务，对于大多数情况来说已经够了，但是任务之间没有明显的依赖关系，例如任务C必须等A和B 完成之后再执行。具体可看[Learn Claude Code 的s12](https://learn.shareai.run/zh/s12/)。思路差不多，我们需要修改todo item的schema，任务的状态需要添加`blockedBy`（即被谁阻塞），`blocks`(当前任务阻塞了哪些任务。)
 
-我对官网预构建的`TodoListMiddleware`稍微改造了一下，具体的代码在[我的GitHub仓库](https://github.com/left0ver/study_agent/blob/main/study_deepagents/advance_todo_middleware.p)，让任务之间有依赖关系。
+我对官网预构建的`TodoListMiddleware`稍微改造了一下，具体的代码在[我的GitHub仓库](https://github.com/left0ver/study_agent/blob/main/study_deepagents/advance_todo_middleware.py)，让任务之间有依赖关系。
 
 生成的`task_list`大概是这样的，如下所示，可以看到不同的任务之间有依赖关系，这个针对复杂的来说还是很有用的。当然我们还是可以添加更多的工具，让agent可以更加精细地管理task，目前的方式是直接让他更新对应的任务状态。这会需要模型比较强大，可能弱一点的模型对于任务的状态更新就会错乱、或者上下文长了之后模型对任务的更新就会不正确。之后我们可以提供一个任务更新的tool，传入task_id来更新任务。
 
